@@ -30,15 +30,14 @@ def main():
 
     show_game_title()
     while game_is_running:
-        get_main_menu_option()
-        # get a valid main menu option from user
-        # if user option is exit:
-        # show exit message and exit game
+        option = get_main_menu_option()
+        if option == MenuItem.EXIT:
+            print("\n!!! Goodbye !!!\n")
+            break
         # if user option is instructions:
         # show instructions
         # if user option is play game:
         # play game
-        break  # for testing
 
 
 def show_game_title():
@@ -66,9 +65,13 @@ def get_main_menu_option():
             "2. Play game\n"
             "3. Exit\n\n"
             "Enter your choice: \n"
-        )
-        if option in ["1", "2", "3"]:
-            return option
+        ).strip()
+        if option == "1":
+            return MenuItem.INSTRUCTIONS
+        elif option == "2":
+            return MenuItem.PLAY
+        elif option == "3":
+            return MenuItem.EXIT
         else:
             print("\n!!! Your entry was invalid !!!\n")
 
