@@ -1,12 +1,11 @@
 """
-run.py
-
 This module manages the user's interaction with the game using a
 text-based interface in the console.
 """
 
 import art
 from enum import Enum
+from bbf_game import Game
 
 # import game
 
@@ -27,6 +26,7 @@ def main():
     text-based interface.
     """
     game_is_running = True
+    game = None
 
     show_game_title()
     while game_is_running:
@@ -34,11 +34,10 @@ def main():
         if option == MenuItem.EXIT:
             print("\n!!! Goodbye !!!\n")
             break
-        # if user option is instructions:
         if option == MenuItem.INSTRUCTIONS:
             show_instructions()
-        # if user option is play game:
-        # play game
+        if option == MenuItem.PLAY:
+            Game()
 
 
 def show_instructions():
