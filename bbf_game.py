@@ -21,4 +21,18 @@ class Game:
         Creates a new single-round game. Each game is initialised with an
         animal name and is ready for the player to make their first guess.
         """
-        print("GAME RUNNING!")
+        self.__word_to_guess = "Hippopotamus"
+        self.masked_word = self.initialise_masked_word()
+        self.previous_guesses = []
+
+    def initialise_masked_word(self):
+        """
+        Initialises the masked word according to the game's rules.
+        The first and last characters are visible, while all other characters
+        (excluding spaces) are masked.
+        """
+        first = self.__word_to_guess[0]
+        last = self.__word_to_guess[-1]
+        middle = self.__word_to_guess[1:-1]
+        masked = "".join([" " if char == " " else "_" for char in middle])
+        return first + masked + last

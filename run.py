@@ -7,8 +7,6 @@ import art
 from enum import Enum
 from bbf_game import Game
 
-# import game
-
 
 class MenuItem(Enum):
     """
@@ -22,11 +20,9 @@ class MenuItem(Enum):
 
 def main():
     """
-    Controls the game's main loop and interactions with the user via a
-    text-based interface.
+    Starts the game and responds to main menu input.
     """
     game_is_running = True
-    game = None
 
     show_game_title()
     while game_is_running:
@@ -37,7 +33,14 @@ def main():
         if option == MenuItem.INSTRUCTIONS:
             show_instructions()
         if option == MenuItem.PLAY:
-            Game()
+            play()
+
+
+def play():
+    """_summary_"""
+    game = Game()
+    print("\nYour bird, beast or fish to guess is:")
+    print(game.masked_word)
 
 
 def show_instructions():
@@ -86,15 +89,15 @@ def get_main_menu_option():
     while valid_input_required:
         option = input(
             "Please choose from one of these options...\n"
-            "1. Read instructions\n"
-            "2. Play game\n"
+            "1. Play game\n"
+            "2. Read instructions\n"
             "3. Exit\n\n"
             "Enter your choice: \n"
         ).strip()
         if option == "1":
-            return MenuItem.INSTRUCTIONS
-        elif option == "2":
             return MenuItem.PLAY
+        elif option == "2":
+            return MenuItem.INSTRUCTIONS
         elif option == "3":
             return MenuItem.EXIT
         else:
