@@ -35,9 +35,35 @@ def main():
             print("\n!!! Goodbye !!!\n")
             break
         # if user option is instructions:
-        # show instructions
+        if option == MenuItem.INSTRUCTIONS:
+            show_instructions()
         # if user option is play game:
         # play game
+
+
+def show_instructions():
+    """Shows the game's instructions to the user and provides
+    navigation back to the main menu.
+    """
+    input(
+        "INSTRUCTIONS:\n"
+        "1. An animal name will be picked at random and shown to you "
+        "with all the letters blanked out.\n"
+        "2. You'll be asked to guess either a single letter or the whole \n"
+        "word."
+        "3. If your guess is wrong, you'll be asked to guess again.\n"
+        "4. If you correctly guessed a single letter, that letter will become "
+        "visible in the word.\n"
+        "5. If you guess the whole word (either by guessing the whole word in "
+        "one go, or by correctly guessing each letter) you'll be "
+        "congratulated and shown your score for that word. You'll also see a "
+        "fascinating description of the animal you just guessed.\n"
+        "\nSCORE:\n"
+        "Your score will be saved for each animal name and is calculated as "
+        "the number of letters in the word divided by the number of attempts "
+        "it took you to guess the word.\n"
+        "\n!!! Press enter to return to the main menu !!!\n"
+    )
 
 
 def show_game_title():
