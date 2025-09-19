@@ -44,8 +44,8 @@ def play():
     game_is_running = True
     # while the user hasn't yet guessed the whole word
     while game_is_running:
-        # show user the game screen and get a valid guess (or exit request)
-        get_guess(game)
+        guess = get_guess(game)
+        game.guess(guess)
         # if the whole word has been guessed
         # exit the loop and congratulate the user
         # if the user typed exit
@@ -120,10 +120,8 @@ def show_previous_guesses(guesses):
     Args:
         guesses (List[str]): The previous guesses
     """
-    print("Your previous guesses were:")
-    print(", ".join(guesses))
-    print("Your last guess was:")
-    print(guesses[-1])
+    print("\nYour previous guesses were:", ", ".join(guesses))
+    print("\nYour last guess was:", guesses[-1])
 
 
 def show_instructions():
