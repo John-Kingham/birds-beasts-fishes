@@ -28,15 +28,14 @@ class Game:
     def initialise_masked_word(self):
         """
         Initialises the masked word according to the game's rules.
-        The first and last characters are visible, while all other characters
-        (excluding spaces) are masked.
 
         Returns:
-            str: The initial masked version of the word to guess.
+            List: The masked word as a list of characters. The first and last
+            letters are visible; all other letters are masked (as None).
         """
         first = self.__word_to_guess[0]
         last = self.__word_to_guess[-1]
         middle = self.__word_to_guess[1:-1]
-        masked = "".join([" " if char == " " else "_" for char in middle])
-        return first + masked + last
-
+        masked_char = None
+        masked = [" " if char == " " else masked_char for char in middle]
+        return [first] + masked + [last]

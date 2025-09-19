@@ -41,31 +41,89 @@ def play():
     Plays a single round of the game until the word is guessed.
     """
     game = Game()
-    print("\nYour bird, beast or fish to guess is:")
-    print(game.masked_word)
-    if game.previous_guesses:
-        print("Your previous guesses were:")
-        print(", ".join(game.previous_guesses))
-        print("Your last guess was:")
-        print(game.previous_guesses[-1])
-    guess = get_guess()
-    print("your guess was", guess)
+    game_is_running = True
+    # while the user hasn't yet guessed the whole word
+    while game_is_running:
+        # show user the game screen and get a valid guess (or exit request)
+        get_guess(game)
+        # if the whole word has been guessed
+        # exit the loop and congratulate the user
+        # if the user typed exit
+        # exit the loop back to the main menu
 
 
-def get_guess():
+def formatted_masked_word(game):
+    """Format the masked word.
+
+    Args:
+        game (bbf_game.Game): The current game.
+    Returns:
+        string: The formatted masked word.
+    """
+    return "".join([char if char else "_" for char in game.masked_word])
+
+
+def get_guess(game):
     """
     Gets a valid letter or word guess from the user.
 
+    Args:
+        game (bbf_game.Game): The current game.
     Returns:
-        str: A valid letter or animal name guess.
+        str: A valid guess, either a letter or an animal name.
     """
     valid_input_required = True
+
+    show_masked_word(game)
     while valid_input_required:
-        return input("Enter a letter or animal name as your guess: ")
-        # if the guess consists of letters and spaces
-        # return the guess
-        # else
-        # print an error message and try again
+        if game.previous_guesses:
+            show_previous_guesses(game.previous_guesses)
+        guess = input("\nGuess a letter or the animal's full name:\n")
+        if is_valid_guess(guess):
+            return guess
+        else:
+            show_invalid_guess_message()
+
+
+def show_invalid_guess_message():
+    print("\n!!! Your guess contained non-alphabetic characters! "
+          "Please try again !!!")
+
+
+def show_masked_word(game):
+    """Show the user the masked word (i.e. the current state of play).
+
+    Args:
+        game (bbf_game.Game): The current game.
+    """
+    masked_word = formatted_masked_word(game)
+    print("\nYour bird, beast or fish to guess is:", masked_word)
+
+
+def is_valid_guess(guess):
+    """
+    Validates the user's guess. Valid guesses contain only alpha characters
+    and spaces.
+
+    Args:
+        guess (str): The user's guess.
+
+    Returns:
+        bool: True if the guess is valid, otherwise False.
+    """
+    return guess.replace(" ", "").isalpha()
+
+
+def show_previous_guesses(guesses):
+    """Show the user information about their previous guesses.
+
+    Args:
+        guesses (List[str]): The previous guesses
+    """
+    print("Your previous guesses were:")
+    print(", ".join(guesses))
+    print("Your last guess was:")
+    print(guesses[-1])
 
 
 def show_instructions():
