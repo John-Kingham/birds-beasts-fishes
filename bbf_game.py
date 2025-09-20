@@ -3,10 +3,13 @@ This module is responsible for applying the rules of the Birds, Beasts and
 Fishes game, and maintaining the state of each game.
 """
 
+import bbf_api
+import random
+
 
 class Game:
     """
-    Represents one round of the Bird, Beasts and FIshes game. To play the game,
+    Represents one round of the Bird, Beasts and Fishes game. To play the game,
     follow this sequence:
     1. Create a new Game object.
     2. Use .masked_word to see which letters have been correctly guessed.
@@ -22,7 +25,8 @@ class Game:
         Creates a new single-round game. Each game is initialised with an
         animal name and is ready for the player to make their first guess.
         """
-        self.__word_to_guess = "Hippopotamus".upper()
+        # TODO: WRAP THE API FUNCTION IN A TRY / EXCEPT
+        self.__word_to_guess = random.choice(bbf_api.get_names()).upper()
         self.__masked_word = self.__initialise_masked_word()
         self.__previous_guesses = []
 
@@ -84,7 +88,6 @@ class Game:
         """
         guess = guess.strip().upper()
         guess_is_correct = False
-
         if len(guess) == 0:
             return guess_is_correct
         else:

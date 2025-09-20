@@ -54,12 +54,9 @@ def play_game():
         guess = get_guess(game)
         guess_is_correct = game.make_guess(guess)
         show_guess_feedback_message(guess_is_correct)
-        # if the whole word has been guessed
         if game.is_over():
             show_game_over_message()
             break
-        # if the user typed exit
-        # exit the loop back to the main menu
 
 
 def show_game_over_message():
@@ -111,8 +108,10 @@ def get_guess(game):
 
 
 def show_invalid_guess_message():
-    print("\n!!! Your guess contained non-alphabetic characters! "
-          "Please try again !!!")
+    print(
+        "\n!!! Your guess contained non-alphabetic characters! "
+        "Please try again !!!"
+    )
 
 
 def show_masked_word(game):
