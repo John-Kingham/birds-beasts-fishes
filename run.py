@@ -52,22 +52,28 @@ def play_game():
 
     while game_is_running:
         guess = get_guess(game)
-        guess_is_correct = game.update_for_guess(guess)
-        if guess_is_correct:
-            show_guess_is_correct_message()
+        guess_is_correct = game.make_guess(guess)
+        show_guess_feedback_message(guess_is_correct)
         # if the whole word has been guessed
         # exit the loop and congratulate the user
         # if the user typed exit
         # exit the loop back to the main menu
 
 
-def show_guess_is_correct_message():
+def show_guess_feedback_message(guess_is_correct):
+    """Tell the user if their guess was right or wrong.
+
+    Args:
+        guess_is_correct (bool): True if guess was correct, otherwise False.
     """
-    Informs the user that their last guess was correct.
-    """
-    print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    print("!!! Your guess was correct. Well done! !!!")
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    if guess_is_correct:
+        print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("!!! Your guess was CORRECT! !!!")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    else:
+        print("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        print("XXX Your guess was WRONG! XXX")
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 
 def get_guess(game):
@@ -127,7 +133,6 @@ def show_previous_guesses(guesses):
         guesses (List[str]): The previous guesses
     """
     print("\nYour previous guesses were:", ", ".join(guesses))
-    print("\nYour last guess was:", guesses[-1])
 
 
 def show_instructions():

@@ -9,11 +9,12 @@ class Game:
     Represents one round of the Bird, Beasts and FIshes game. To play the game,
     follow this sequence:
     1. Create a new Game object.
-    2. Call previous_guesses() to see previous guesses.
-    3. Call guess() to make a new guess.
-    4. Call over() to see if the game is over.
-    5. Repeat 2 & 4 until the game is over.
-    6. Call score() to get the game's final score.
+    2. Use .masked_word to see which letters have been correctly guessed.
+    3. Use .previous_guesses to see previous guesses.
+    4. Use .make_guess() to make a new guess.
+    5. Use. is_over() to see if the game is over.
+    6. Repeat 2 to 5 until the game is over.
+    7. Use .score() to get the game's final score.
     """
 
     def __init__(self):
@@ -60,7 +61,7 @@ class Game:
         masked = [" " if char == " " else masked_char for char in middle]
         return [first] + masked + [last]
 
-    def update_for_guess(self, guess):
+    def make_guess(self, guess):
         """
         Update the game's state based on the player's guess.
 
