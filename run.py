@@ -52,11 +52,22 @@ def play_game():
 
     while game_is_running:
         guess = get_guess(game)
-        game.guess(guess)
+        if game.guess(guess):
+            show_guess_is_correct_message()
+
         # if the whole word has been guessed
         # exit the loop and congratulate the user
         # if the user typed exit
         # exit the loop back to the main menu
+
+
+def show_guess_is_correct_message():
+    """
+    Informs the user that their last guess was correct.
+    """
+    print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print("!!! Your guess was correct. Well done! !!!")
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
 
 def formatted_masked_word(game):

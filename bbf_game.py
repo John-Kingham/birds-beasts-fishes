@@ -22,10 +22,10 @@ class Game:
         animal name and is ready for the player to make their first guess.
         """
         self.__word_to_guess = "Hippopotamus".upper()
-        self.masked_word = self.initialise_masked_word()
+        self.masked_word = self.__initialise_masked_word()
         self.previous_guesses = []
 
-    def initialise_masked_word(self):
+    def __initialise_masked_word(self):
         """
         Initialises the masked word according to the game's rules.
 
@@ -59,11 +59,11 @@ class Game:
         else:
             self.previous_guesses.append(guess)
             if len(guess) == 1:
-                return self.update_masked_word_for_letter(guess)
+                return self.__update_masked_word_for_letter(guess)
             else:
-                return self.update_masked_word_for_word(guess)
+                return self.__update_masked_word_for_word(guess)
 
-    def update_masked_word_for_letter(self, guess):
+    def __update_masked_word_for_letter(self, guess):
         """
         Updated the masked word based on a single letter guess.
 
@@ -81,7 +81,7 @@ class Game:
                 self.masked_word[i] = guess
         return guess_is_correct
 
-    def update_masked_word_for_word(self, guess):
+    def __update_masked_word_for_word(self, guess):
         """
         Updated the masked word based on a guess of the whole word.
 
