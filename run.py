@@ -28,17 +28,24 @@ def main():
     while game_is_running:
         option = get_main_menu_option()
         if option == MenuItem.EXIT:
-            print("\n!!! Goodbye !!!\n")
+            show_exit_message()
             break
         if option == MenuItem.INSTRUCTIONS:
             show_instructions()
         if option == MenuItem.PLAY:
-            play()
+            play_game()
 
 
-def play():
+def show_exit_message():
     """
-    Plays a single round of the game until the word is guessed.
+    Displays an exit message to the user.
+    """
+    print("\n!!! Goodbye !!!\n")
+
+
+def play_game():
+    """
+    Plays a single round of Birds, Beats and Fishes until the word is guessed.
     """
     game = Game()
     game_is_running = True
