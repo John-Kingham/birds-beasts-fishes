@@ -22,8 +22,6 @@ class Game:
         animal name and is ready for the player to make their first guess.
         """
         self.__word_to_guess = "Hippopotamus".upper()
-
-        # TODO: MAKE MASKED WORD A PROPERTY SO IT CAN'T BE UPDATED EXTERNALLY
         self.__masked_word = self.__initialise_masked_word()
         self.__previous_guesses = []
 
@@ -39,6 +37,12 @@ class Game:
 
     @property
     def previous_guesses(self):
+        """
+        Returns a list of the player's previous guesses.
+
+        Returns:
+            List[str]: Previous guesses.
+        """
         return self.__previous_guesses.copy()
 
     def __initialise_masked_word(self):
