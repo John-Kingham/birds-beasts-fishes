@@ -6,6 +6,7 @@ text-based interface in the console.
 import art
 from enum import Enum
 from bbf_game import Game
+import time
 
 
 class MenuItem(Enum):
@@ -40,7 +41,11 @@ def show_exit_message():
     """
     Displays an exit message to the user.
     """
-    print("\n!!! Goodbye !!!\n")
+    print(
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Thank you for playing BIRDS, BEASTS AND FISHES! !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+    )
 
 
 def play_game():
@@ -63,10 +68,13 @@ def show_game_over_message():
     """
     Shows a game over message the to user.
     """
-    print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    print("!!! Well done, you have successfully guessed the whole word! !!!")
-    print("!!! You can now return to the main menu to start a new game! !!!")
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+    print(
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Well done, you've guessed the whole word! !!!\n"
+        "!!!  Press ENTER to return to the main menu!  !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+    )
+    input()
 
 
 def show_guess_feedback_message(guess_is_correct):
@@ -76,13 +84,25 @@ def show_guess_feedback_message(guess_is_correct):
         guess_is_correct (bool): True if guess was correct, otherwise False.
     """
     if guess_is_correct:
-        print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print("!!! Your guess was CORRECT! !!!")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print(
+            "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+            "!!! Your guess was CORRECT! !!!\n"
+            "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        )
     else:
-        print("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXX Your guess was WRONG! XXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        print(
+            "\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+            "XXX Your guess was WRONG! XXX\n"
+            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        )
+    pause()
+
+
+def pause():
+    """
+    Pause the interface to give the user time to read new content.
+    """
+    time.sleep(1)
 
 
 def get_guess(game):
@@ -101,6 +121,7 @@ def get_guess(game):
         if game.previous_guesses:
             show_previous_guesses(game.previous_guesses)
         guess = input("\nGuess a letter or the animal's full name:\n")
+        pause()
         if is_valid_guess(guess):
             return guess
         else:
@@ -109,8 +130,9 @@ def get_guess(game):
 
 def show_invalid_guess_message():
     print(
-        "\n!!! Your guess contained non-alphabetic characters! "
-        "Please try again !!!"
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Your guess contained non-alphabetic characters. Try again !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
     )
 
 
@@ -152,7 +174,7 @@ def show_instructions():
     navigation back to the main menu.
     """
     input(
-        "INSTRUCTIONS:\n"
+        "\nINSTRUCTIONS:\n"
         "1. An animal name will be picked at random and shown to you "
         "with all the letters blanked out.\n"
         "2. You'll be asked to guess either a single letter or the whole \n"
@@ -168,8 +190,11 @@ def show_instructions():
         "Your score will be saved for each animal name and is calculated as "
         "the number of letters in the word divided by the number of attempts "
         "it took you to guess the word.\n"
-        "\n!!! Press enter to return to the main menu !!!\n"
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Press enter to return to the main menu !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
     )
+    pause()
 
 
 def show_game_title():
@@ -178,6 +203,7 @@ def show_game_title():
     """
     art.tprint("Birds, Beasts", space=1)
     art.tprint("and Fishes!", space=1)
+    pause()
 
 
 def get_main_menu_option():
@@ -189,7 +215,12 @@ def get_main_menu_option():
     """
     valid_input_required = True
 
-    print("??? Are you ready to start a new game ???\n")
+    print(
+        "?????????????????????????????????????????\n"
+        "??? Are you ready to start a new game ???\n"
+        "?????????????????????????????????????????\n"
+    )
+    pause()
     while valid_input_required:
         option = input(
             "Please choose from one of these options...\n"
@@ -198,6 +229,7 @@ def get_main_menu_option():
             "3. Exit\n\n"
             "Enter your choice: \n"
         ).strip()
+        pause()
         if option == "1":
             return MenuItem.PLAY
         elif option == "2":
@@ -205,7 +237,11 @@ def get_main_menu_option():
         elif option == "3":
             return MenuItem.EXIT
         else:
-            print("\n!!! Your entry was invalid !!!\n")
+            print(
+                "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+                "!!! Your entry was invalid !!!\n"
+                "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+            )
 
 
 if __name__ == "__main__":
