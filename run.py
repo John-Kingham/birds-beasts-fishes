@@ -70,17 +70,6 @@ def show_guess_is_correct_message():
     print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
 
-def formatted_masked_word(game):
-    """Format the masked word.
-
-    Args:
-        game (bbf_game.Game): The current game.
-    Returns:
-        string: The formatted masked word.
-    """
-    return "".join([char if char else "_" for char in game.masked_word])
-
-
 def get_guess(game):
     """
     Gets a valid letter or word guess from the user.
@@ -114,8 +103,7 @@ def show_masked_word(game):
     Args:
         game (bbf_game.Game): The current game.
     """
-    masked_word = formatted_masked_word(game)
-    print("\nYour bird, beast or fish to guess is:", masked_word)
+    print("\nYour bird, beast or fish to guess is:", game.masked_word)
 
 
 def is_valid_guess(guess):

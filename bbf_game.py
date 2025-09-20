@@ -22,8 +22,24 @@ class Game:
         animal name and is ready for the player to make their first guess.
         """
         self.__word_to_guess = "Hippopotamus".upper()
-        self.masked_word = self.__initialise_masked_word()
-        self.previous_guesses = []
+
+        # TODO: MAKE MASKED WORD A PROPERTY SO IT CAN'T BE UPDATED EXTERNALLY
+        self.__masked_word = self.__initialise_masked_word()
+        self.__previous_guesses = []
+
+    @property
+    def masked_word(self):
+        """
+        Returns the masked word as a string. Masked letters are shown as "_".
+
+        Returns:
+            str: The masked word.
+        """
+        return "".join(self.__masked_word)
+
+    @property
+    def previous_guesses(self):
+        return self.__previous_guesses.copy()
 
     def __initialise_masked_word(self):
         """
@@ -57,7 +73,7 @@ class Game:
         if len(guess) == 0:
             return guess_is_correct
         else:
-            self.previous_guesses.append(guess)
+            self.__previous_guesses.append(guess)
             if len(guess) == 1:
                 return self.__update_masked_word_for_letter(guess)
             else:
@@ -78,7 +94,7 @@ class Game:
         for i in range(len(self.__word_to_guess)):
             if self.__word_to_guess[i] == guess:
                 guess_is_correct = True
-                self.masked_word[i] = guess
+                self.__masked_word[i] = guess
         return guess_is_correct
 
     def __update_masked_word_for_word(self, guess):
@@ -94,6 +110,6 @@ class Game:
         guess_is_correct = False
 
         if guess == self.__word_to_guess:
-            self.masked_word = self.__word_to_guess
+            self.__masked_word = list(self.__word_to_guess)
             guess_is_correct = True
         return guess_is_correct
