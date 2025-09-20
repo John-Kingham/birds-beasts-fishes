@@ -46,6 +46,16 @@ class Game:
         """
         return self.__previous_guesses.copy()
 
+    def is_over(self):
+        """
+        Returns whether the game is over. The game is over when all letters
+        have been unmasked.
+
+        Returns:
+            bool: True if all letters have been unmasked, otherwise False.
+        """
+        return self.masked_word == self.__word_to_guess
+
     def __initialise_masked_word(self):
         """
         Initialises the masked word according to the game's rules.

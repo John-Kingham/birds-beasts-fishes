@@ -55,9 +55,21 @@ def play_game():
         guess_is_correct = game.make_guess(guess)
         show_guess_feedback_message(guess_is_correct)
         # if the whole word has been guessed
-        # exit the loop and congratulate the user
+        if game.is_over():
+            show_game_over_message()
+            break
         # if the user typed exit
         # exit the loop back to the main menu
+
+
+def show_game_over_message():
+    """
+    Shows a game over message the to user.
+    """
+    print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print("!!! Well done, you have successfully guessed the whole word! !!!")
+    print("!!! You can now return to the main menu to start a new game! !!!")
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
 
 
 def show_guess_feedback_message(guess_is_correct):
