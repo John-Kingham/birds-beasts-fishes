@@ -52,9 +52,9 @@ def play_game():
 
     while game_is_running:
         guess = get_guess(game)
-        if game.guess(guess):
+        guess_is_correct = game.update_for_guess(guess)
+        if guess_is_correct:
             show_guess_is_correct_message()
-
         # if the whole word has been guessed
         # exit the loop and congratulate the user
         # if the user typed exit

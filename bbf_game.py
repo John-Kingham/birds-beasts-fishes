@@ -40,7 +40,7 @@ class Game:
         masked = [" " if char == " " else masked_char for char in middle]
         return [first] + masked + [last]
 
-    def guess(self, guess):
+    def update_for_guess(self, guess):
         """
         Update the game's state based on the player's guess.
 
