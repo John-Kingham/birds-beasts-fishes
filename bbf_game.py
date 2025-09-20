@@ -31,12 +31,12 @@ class Game:
 
         Returns:
             List: The masked word as a list of characters. The first and last
-            letters are visible; all other letters are masked (as None).
+            letters are visible; all other letters are masked (as "_").
         """
         first = self.__word_to_guess[0]
         last = self.__word_to_guess[-1]
         middle = self.__word_to_guess[1:-1]
-        masked_char = None
+        masked_char = "_"
         masked = [" " if char == " " else masked_char for char in middle]
         return [first] + masked + [last]
 
@@ -55,7 +55,7 @@ class Game:
         guess_is_correct = False
 
         if len(guess) == 0:
-            guess_is_correct
+            return guess_is_correct
         else:
             self.previous_guesses.append(guess)
             if len(guess) == 1:

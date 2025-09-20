@@ -49,7 +49,7 @@ def play_game():
     """
     game = Game()
     game_is_running = True
-    # while the user hasn't yet guessed the whole word
+
     while game_is_running:
         guess = get_guess(game)
         game.guess(guess)
