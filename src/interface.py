@@ -49,16 +49,18 @@ def play_game():
     """
     Plays a single round of Birds, Beats and Fishes until the word is guessed.
     """
-    game = Game()
-    game_is_running = True
-
-    while game_is_running:
-        guess = get_guess(game)
-        guess_is_correct = game.make_guess(guess)
-        show_guess_feedback_message(guess_is_correct)
-        if game.is_over():
-            show_game_over_message(game.masked_word)
-            break
+    try:
+        game = Game()
+        game_is_running = True
+        while game_is_running:
+            guess = get_guess(game)
+            guess_is_correct = game.make_guess(guess)
+            show_guess_feedback_message(guess_is_correct)
+            if game.is_over():
+                show_game_over_message(game.masked_word)
+                break
+    except Exception:
+        print(content.animal_names_error_message())
 
 
 def show_game_over_message(guessed_word):
@@ -103,12 +105,14 @@ def get_guess(game):
     """
     valid_input_required = True
 
+    # TODO: MOVE THIS WITHIN THE LOOP AND ADD A PAUSE AFTER MASKED WORD SHOWN
     show_masked_word(game)
     while valid_input_required:
         if game.previous_guesses:
             show_previous_guesses(game.previous_guesses)
         guess = input(content.guess_prompt())
         pause()
+        # TODO: VALIDATE THAT GUESS ISN'T IN PREVIOUS GUESSES
         if is_valid_guess(guess):
             return guess
         else:

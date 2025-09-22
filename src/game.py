@@ -24,8 +24,10 @@ class Game:
         """
         Creates a new single-round game. Each game is initialised with an
         animal name and is ready for the player to make their first guess.
+
+        Raises:
+            Exception: If there is a problem accessing the animal names data.
         """
-        # TODO: WRAP THE API FUNCTION IN A TRY / EXCEPT
         self.__word_to_guess = random.choice(
             database.get_animal_names()
         ).upper()

@@ -180,3 +180,18 @@ def main_menu_options(first, second, third):
         f"{third}. Exit\n\n"
         "Enter your choice: \n"
     )
+
+
+def animal_names_error_message():
+    """
+    Returns a message informing the user there was an error accessing the
+    animal names database.
+
+    Returns:
+        str: Accessing animal names error message.
+    """
+    return (
+        "\n*******************************************************\n"
+        "*** ERROR: UNABLE TO ACCESS ANIMAL NAMES DATABASE! ***\n"
+        "*******************************************************\n"
+    )
