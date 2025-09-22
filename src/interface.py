@@ -179,20 +179,15 @@ def get_main_menu_option():
 
     print(content.main_menu_heading())
     pause()
+    one, two, three = "1", "2", "3"
     while valid_input_required:
-        option = input(
-            "Please choose from one of these options...\n"
-            "1. Play game\n"
-            "2. Read instructions\n"
-            "3. Exit\n\n"
-            "Enter your choice: \n"
-        ).strip()
+        option = input(content.main_menu_options(one, two, three)).strip()
         pause()
-        if option == "1":
+        if option == one:
             return MenuItem.PLAY
-        elif option == "2":
+        elif option == two:
             return MenuItem.INSTRUCTIONS
-        elif option == "3":
+        elif option == three:
             return MenuItem.EXIT
         else:
             print(content.menu_option_invalid_message())

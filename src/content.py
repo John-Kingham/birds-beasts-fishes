@@ -155,3 +155,25 @@ def guess_prompt():
         str: A prompt asking the user to enter their guess.
     """
     return "\nGuess a letter or the animal's full name:\n"
+
+
+def main_menu_options(first, second, third):
+    """
+    Returns the main menu's text. Labels for each menu item are passed in
+    so they can be matched up with the user's input in the calling function.
+
+    Args:
+        first (str): The label for the first menu item
+        second (str): The label for the second menu item
+        third (str): The label for the third menu item
+
+    Returns:
+        str: The main menu text.
+    """
+    return (
+        "Please choose from one of these options...\n"
+        f"{first}. Play game\n"
+        f"{second}. Read instructions\n"
+        f"{third}. Exit\n\n"
+        "Enter your choice: \n"
+    )
