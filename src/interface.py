@@ -104,7 +104,7 @@ def get_guess(game):
     while valid_input_required:
         if game.previous_guesses:
             show_previous_guesses(game.previous_guesses)
-        guess = input("\nGuess a letter or the animal's full name:\n")
+        guess = input(content.guess_prompt())
         pause()
         if is_valid_guess(guess):
             return guess
@@ -195,4 +195,4 @@ def get_main_menu_option():
         elif option == "3":
             return MenuItem.EXIT
         else:
-            print(content.menu_option_invalid())
+            print(content.menu_option_invalid_message())

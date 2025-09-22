@@ -140,9 +140,18 @@ def main_menu_heading():
     )
 
 
-def menu_option_invalid():
+def menu_option_invalid_message():
     return (
         "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
         "!!! Your entry was invalid !!!\n"
         "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
     )
+
+
+def guess_prompt():
+    """Returns a message prompting the user to enter their guess.
+
+    Returns:
+        str: A prompt asking the user to enter their guess.
+    """
+    return "\nGuess a letter or the animal's full name:\n"
