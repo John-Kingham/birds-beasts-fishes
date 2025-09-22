@@ -1,0 +1,148 @@
+"""
+This module is responsible for providing the text interface's content.
+"""
+
+
+def exit_message():
+    """
+    Returns an exit message to the user.
+
+    Returns:
+        str: The game's exit message.
+    """
+    return (
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Thank you for playing BIRDS, BEASTS AND FISHES! !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+    )
+
+
+def instructions():
+    """Returns the game's instruction text.
+
+    Returns:
+        str: The game's instructions.
+    """
+    return (
+        "\nINSTRUCTIONS:\n"
+        "1. An animal name will be picked at random and shown to you.\n"
+        "All letters will be blanked out, except the first and last.\n"
+        "2. You'll be asked to guess a single letter or the whole word.\n"
+        "3. If your guess is wrong, you'll be asked to guess again.\n"
+        "4. If you guess a single letter, the letter will become visible.\n"
+        "5. If you guess the whole word, you've won that round of the game.\n"
+        "You'll be congratulated and shown your score for that word.\n"
+        "You'll also be shown a description of the animal you just guessed.\n"
+        "\nSCORE:\n"
+        "Your score will be saved for each animal name.\n"
+        "The score is calculated as:\n"
+        "The number of letters divided by the number of guesses.\n"
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Press enter to return to the main menu !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+    )
+
+
+def game_over_message():
+    """
+    Returns the game over message.
+
+    Returns:
+        str: The game over message.
+    """
+    return (
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Well done, you've guessed the whole word! !!!\n"
+        "!!! Press ENTER to return to the main menu!   !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+    )
+
+
+def guess_correct_message():
+    """Returns a message informing the user their guess was correct.
+
+    Returns:
+        str: The guess-was-correct message.
+    """
+    return (
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Your guess was CORRECT! !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    )
+
+
+def guess_incorrect_message():
+    """
+    Returns a message informing the user their guess was incorrect.
+
+    Returns:
+        str: The guess-was-incorrect message.
+    """
+    return (
+        "\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
+        "XXX Your guess was WRONG! XXX\n"
+        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+    )
+
+
+def guess_invalid_message():
+    """
+    Returns a message informing the user their guess was invalid.
+
+    Returns:
+        str: The guess-invalid message.
+    """
+    return (
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Your guess contained non-alphabetic characters. Try again !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    )
+
+
+def masked_word_message():
+    """Returns a label to be displayed before the masked word.
+
+    Returns:
+        str: A label to be placed before the masked word on screen.
+    """
+    return "\nYour bird, beast or fish to guess is:"
+
+
+def previous_guesses_message():
+    """Returns a message to be displayed before the list of previous guesses.
+
+    Returns:
+        str: A message to be displayed before the list of previous guesses.
+    """
+    return "\nYour previous guesses were:"
+
+
+def game_title():
+    """
+    Returns the game's title.
+
+    Returns:
+        str: The game's title.
+    """
+    return "Birds, Beasts\nand Fishes"
+
+
+def main_menu_heading():
+    """Returns a heading for the main menu.
+
+    Returns:
+        str: The main menu's heading.
+    """
+    return (
+        "?????????????????????????????????????????\n"
+        "??? Are you ready to start a new game ???\n"
+        "?????????????????????????????????????????\n"
+    )
+
+
+def menu_option_invalid():
+    return (
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Your entry was invalid !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+    )

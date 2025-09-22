@@ -4,6 +4,7 @@ text-based interface in the console.
 """
 
 import art
+from src import content
 from enum import Enum
 from src.game import Game
 import time
@@ -39,13 +40,9 @@ def start_main_menu():
 
 def show_exit_message():
     """
-    Displays an exit message to the user.
+    Shows the user an exit message.
     """
-    print(
-        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Thank you for playing BIRDS, BEASTS AND FISHES! !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-    )
+    print(content.exit_message())
 
 
 def play_game():
@@ -68,12 +65,7 @@ def show_game_over_message():
     """
     Shows a game over message the to user.
     """
-    print(
-        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Well done, you've guessed the whole word! !!!\n"
-        "!!!  Press ENTER to return to the main menu!  !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-    )
+    print(content.game_over_message())
     input()
 
 
@@ -84,17 +76,9 @@ def show_guess_feedback_message(guess_is_correct):
         guess_is_correct (bool): True if guess was correct, otherwise False.
     """
     if guess_is_correct:
-        print(
-            "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-            "!!! Your guess was CORRECT! !!!\n"
-            "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-        )
+        print(content.guess_correct_message())
     else:
-        print(
-            "\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
-            "XXX Your guess was WRONG! XXX\n"
-            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-        )
+        print(content.guess_incorrect_message())
     pause()
 
 
@@ -129,11 +113,10 @@ def get_guess(game):
 
 
 def show_invalid_guess_message():
-    print(
-        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Your guess contained non-alphabetic characters. Try again !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-    )
+    """
+    Informs the user that their guess was invalid.
+    """
+    print(content.guess_invalid_message())
 
 
 def show_masked_word(game):
@@ -142,7 +125,7 @@ def show_masked_word(game):
     Args:
         game (bbf_game.Game): The current game.
     """
-    print("\nYour bird, beast or fish to guess is:", game.masked_word)
+    print(content.masked_word_message(), game.masked_word)
 
 
 def is_valid_guess(guess):
@@ -165,7 +148,7 @@ def show_previous_guesses(guesses):
     Args:
         guesses (List[str]): The previous guesses
     """
-    print("\nYour previous guesses were:", ", ".join(guesses))
+    print(content.previous_guesses_message(), ", ".join(guesses))
 
 
 def show_instructions():
@@ -173,27 +156,7 @@ def show_instructions():
     Shows the game's instructions to the user and provides
     navigation back to the main menu.
     """
-    input(
-        "\nINSTRUCTIONS:\n"
-        "1. An animal name will be picked at random and shown to you "
-        "with all the letters blanked out.\n"
-        "2. You'll be asked to guess either a single letter or the whole \n"
-        "word."
-        "3. If your guess is wrong, you'll be asked to guess again.\n"
-        "4. If you correctly guessed a single letter, that letter will become "
-        "visible in the word.\n"
-        "5. If you guess the whole word (either by guessing the whole word in "
-        "one go, or by correctly guessing each letter) you'll be "
-        "congratulated and shown your score for that word. You'll also see a "
-        "fascinating description of the animal you just guessed.\n"
-        "\nSCORE:\n"
-        "Your score will be saved for each animal name and is calculated as "
-        "the number of letters in the word divided by the number of attempts "
-        "it took you to guess the word.\n"
-        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Press enter to return to the main menu !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-    )
+    input(content.instructions())
     pause()
 
 
@@ -201,8 +164,7 @@ def show_game_title():
     """
     Display the game's title.
     """
-    art.tprint("Birds, Beasts", space=1)
-    art.tprint("and Fishes!", space=1)
+    art.tprint(content.game_title(), space=1)
     pause()
 
 
@@ -215,11 +177,7 @@ def get_main_menu_option():
     """
     valid_input_required = True
 
-    print(
-        "?????????????????????????????????????????\n"
-        "??? Are you ready to start a new game ???\n"
-        "?????????????????????????????????????????\n"
-    )
+    print(content.main_menu_heading())
     pause()
     while valid_input_required:
         option = input(
@@ -237,8 +195,4 @@ def get_main_menu_option():
         elif option == "3":
             return MenuItem.EXIT
         else:
-            print(
-                "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-                "!!! Your entry was invalid !!!\n"
-                "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-            )
+            print(content.menu_option_invalid())
