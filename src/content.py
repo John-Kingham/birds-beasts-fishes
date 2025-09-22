@@ -43,18 +43,21 @@ def instructions():
     )
 
 
-def game_over_message():
+def game_over_message(guessed_word):
     """
     Returns the game over message.
+
+    Args:
+        guessed_word (str): The word correctly guessed by the user.
 
     Returns:
         str: The game over message.
     """
     return (
-        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Well done, you've guessed the whole word! !!!\n"
-        "!!! Press ENTER to return to the main menu!   !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        f"\nWell done! You guessed that the word was: {guessed_word} !\n"
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Press ENTER to return to the main menu! !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
     )
 
 
@@ -105,7 +108,7 @@ def masked_word_message():
     Returns:
         str: A label to be placed before the masked word on screen.
     """
-    return "\nYour bird, beast or fish to guess is:"
+    return "\nYour bird, beast or fish to guess is:\n"
 
 
 def previous_guesses_message():

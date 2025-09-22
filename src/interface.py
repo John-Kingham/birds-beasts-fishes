@@ -57,15 +57,18 @@ def play_game():
         guess_is_correct = game.make_guess(guess)
         show_guess_feedback_message(guess_is_correct)
         if game.is_over():
-            show_game_over_message()
+            show_game_over_message(game.masked_word)
             break
 
 
-def show_game_over_message():
+def show_game_over_message(guessed_word):
     """
     Shows a game over message the to user.
+
+    Args:
+        guessed_word (str): The word correctly guessed by the user.
     """
-    print(content.game_over_message())
+    print(content.game_over_message(guessed_word))
     input()
 
 
@@ -125,7 +128,8 @@ def show_masked_word(game):
     Args:
         game (bbf_game.Game): The current game.
     """
-    print(content.masked_word_message(), game.masked_word)
+    print(content.masked_word_message())
+    print(game.masked_word)
 
 
 def is_valid_guess(guess):
