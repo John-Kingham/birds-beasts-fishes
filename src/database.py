@@ -1,9 +1,9 @@
 """
-This module is responsible for getting game-related data from the internet.
+This module is responsible for storing and retrieving persistent data.
 """
 
 
-def get_names():
+def get_animal_names():
     """
     Gets a list of animal names.
 
