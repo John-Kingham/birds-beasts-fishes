@@ -3,7 +3,7 @@ This module is responsible for applying the rules of the Birds, Beasts and
 Fishes game, and maintaining the state of each game.
 """
 
-import bbf_api
+from src import api
 import random
 
 
@@ -26,7 +26,7 @@ class Game:
         animal name and is ready for the player to make their first guess.
         """
         # TODO: WRAP THE API FUNCTION IN A TRY / EXCEPT
-        self.__word_to_guess = random.choice(bbf_api.get_names()).upper()
+        self.__word_to_guess = random.choice(api.get_names()).upper()
         self.__masked_word = self.__initialise_masked_word()
         self.__previous_guesses = []
 
