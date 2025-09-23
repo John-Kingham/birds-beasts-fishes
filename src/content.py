@@ -102,6 +102,20 @@ def guess_invalid_message():
     )
 
 
+def guessed_previously_message():
+    """
+    Returns a message informing the user they have made this guess before.
+
+    Returns:
+        str: The guessed-previously message.
+    """
+    return (
+        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
+        "!!! Your guess matches an existing guess. Try again !!!\n"
+        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    )
+
+
 def masked_word_message():
     """Returns a label to be displayed before the masked word.
 

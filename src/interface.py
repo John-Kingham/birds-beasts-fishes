@@ -105,18 +105,25 @@ def get_guess(game):
     """
     valid_input_required = True
 
-    # TODO: MOVE THIS WITHIN THE LOOP AND ADD A PAUSE AFTER MASKED WORD SHOWN
-    show_masked_word(game)
     while valid_input_required:
+        show_masked_word(game)
         if game.previous_guesses:
             show_previous_guesses(game.previous_guesses)
-        guess = input(content.guess_prompt())
+        guess = input(content.guess_prompt()).strip().upper()
         pause()
-        # TODO: VALIDATE THAT GUESS ISN'T IN PREVIOUS GUESSES
-        if is_valid_guess(guess):
+        if guess in game.previous_guesses:
+            show_previously_guessed_message()
+        elif is_valid_guess(guess):
             return guess
         else:
             show_invalid_guess_message()
+
+
+def show_previously_guessed_message():
+    """
+    Informs the user that they have already made this guess before.
+    """
+    print(content.guessed_previously_message())
 
 
 def show_invalid_guess_message():
@@ -134,6 +141,7 @@ def show_masked_word(game):
     """
     print(content.masked_word_message())
     print(game.masked_word)
+    pause()
 
 
 def is_valid_guess(guess):
