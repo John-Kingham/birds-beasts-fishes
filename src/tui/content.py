@@ -54,12 +54,14 @@ def game_over_message(game):
         str: The game over message.
     """
     word = game.masked_word
+    num_letters = len(word)
     num_guesses = len(game.previous_guesses)
     score = game.final_score()
 
     return (
         "\nWell done! "
         f"You guessed that the word was: {" ".join(word)} !\n"
+        f"The number of letters in that word was: {num_letters} !\n"
         f"The number of guesses you made was: {num_guesses} !\n"
         f"This gives you a score for this word of: {score} !\n"
         "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"

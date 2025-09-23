@@ -4,11 +4,13 @@ text-based interface in the console.
 """
 
 # TODO: ADD HIGH SCORES VIA GOOGLE SHEET
+# TODO: AT END GAME, TELL THE USER THE LENGTH OF THE WORD
 
 import art
-from src.tui import content
 from enum import Enum
+from src.data import database
 from src.game import Game
+from src.tui import content
 import time
 
 
@@ -60,9 +62,19 @@ def _play_game():
             _show_guess_feedback_message(guess_is_correct)
             if game.is_over():
                 _show_game_over_message(game)
+                _save_final_score(game)
                 break
     except Exception:
         print(content.animal_names_error_message())
+
+
+def _save_final_score(game):
+    """Saves the games final score to the database.
+
+    Args:
+        game (Game): The game whose final score we want to save.
+    """
+    database.save_score(game.masked_word, game.final_score())
 
 
 def _show_game_over_message(game):
