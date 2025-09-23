@@ -61,9 +61,8 @@ def _play_game():
                 _show_game_over_message(game)
                 _save_final_score(game)
                 break
-    except Exception as e:
-        print(e)
-        print(content.animal_names_error_message())
+    except Exception:
+        print(content.database_error_message())
 
 
 def _save_final_score(game):

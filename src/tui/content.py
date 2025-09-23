@@ -215,16 +215,16 @@ def main_menu_options(first, second, third):
     )
 
 
-def animal_names_error_message():
+def database_error_message():
     """
     Returns a message informing the user there was an error accessing the
-    animal names database.
+    database.
 
     Returns:
-        str: Accessing animal names error message.
+        str: The database error message.
     """
     return (
-        "\n*******************************************************\n"
-        "*** ERROR: UNABLE TO ACCESS ANIMAL NAMES DATABASE! ***\n"
-        "*******************************************************\n"
+        "\n*****************************************\n"
+        "*** ERROR: UNABLE TO ACCESS DATABASE! ***\n"
+        "*****************************************\n"
     )
