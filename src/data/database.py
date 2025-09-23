@@ -3,7 +3,7 @@ This module is responsible for managing the storage and retrieval of
 persistent data.
 """
 
-from src.data import github
+from src.data import github_api
 
 
 def get_animal_names():
@@ -16,4 +16,4 @@ def get_animal_names():
     Returns:
         List[str]: A list of animal names.
     """
-    return github.get_animal_names()
+    return github_api.get_animal_names()
