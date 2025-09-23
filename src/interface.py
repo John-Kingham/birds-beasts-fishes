@@ -3,8 +3,7 @@ This module manages the user's interaction with the game using a
 text-based interface in the console.
 """
 
-# TODO: PUT A SPACE BETWEEN EACH CHARACTER IN THE MASKED WORD BECAUSE
-# UNDERLINES LOOK LIKE ONE LONG LINE IN HEROKU
+# TODO: MAKE SURE NAMES ARE PRIVATE OR PROTECTED AS APPROPRIATE
 
 import art
 from src import content
@@ -143,7 +142,7 @@ def show_masked_word(game):
         game (bbf_game.Game): The current game.
     """
     print(content.masked_word_message())
-    print(game.masked_word)
+    print(" ".join(game.masked_word))
     pause()
 
 

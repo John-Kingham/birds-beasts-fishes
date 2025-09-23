@@ -54,7 +54,8 @@ def game_over_message(guessed_word):
         str: The game over message.
     """
     return (
-        f"\nWell done! You guessed that the word was: {guessed_word} !\n"
+        "\nWell done! "
+        f"You guessed that the word was: {" ".join(guessed_word)} !\n"
         "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
         "!!! Press ENTER to return to the main menu! !!!\n"
         "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
