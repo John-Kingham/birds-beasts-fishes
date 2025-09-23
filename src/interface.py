@@ -4,6 +4,7 @@ text-based interface in the console.
 """
 
 # TODO: MAKE SURE NAMES ARE PRIVATE OR PROTECTED AS APPROPRIATE
+# TODO: ADD HIGH SCORES VIA GOOGLE SHEET
 
 import art
 from src import content
@@ -28,26 +29,26 @@ def start_main_menu():
     """
     game_is_running = True
 
-    show_game_title()
+    _show_game_title()
     while game_is_running:
-        option = get_main_menu_option()
+        option = _get_main_menu_option()
         if option == MenuItem.EXIT:
-            show_exit_message()
+            _show_exit_message()
             break
         if option == MenuItem.INSTRUCTIONS:
-            show_instructions()
+            _show_instructions()
         if option == MenuItem.PLAY:
-            play_game()
+            _play_game()
 
 
-def show_exit_message():
+def _show_exit_message():
     """
     Shows the user an exit message.
     """
     print(content.exit_message())
 
 
-def play_game():
+def _play_game():
     """
     Plays a single round of Birds, Beats and Fishes until the word is guessed.
     """
@@ -55,17 +56,17 @@ def play_game():
         game = Game()
         game_is_running = True
         while game_is_running:
-            guess = get_guess(game)
+            guess = _get_guess(game)
             guess_is_correct = game.make_guess(guess)
-            show_guess_feedback_message(guess_is_correct)
+            _show_guess_feedback_message(guess_is_correct)
             if game.is_over():
-                show_game_over_message(game.masked_word)
+                _show_game_over_message(game.masked_word)
                 break
     except Exception:
         print(content.animal_names_error_message())
 
 
-def show_game_over_message(guessed_word):
+def _show_game_over_message(guessed_word):
     """
     Shows a game over message the to user.
 
@@ -76,7 +77,7 @@ def show_game_over_message(guessed_word):
     input()
 
 
-def show_guess_feedback_message(guess_is_correct):
+def _show_guess_feedback_message(guess_is_correct):
     """Tell the user if their guess was right or wrong.
 
     Args:
@@ -86,17 +87,17 @@ def show_guess_feedback_message(guess_is_correct):
         print(content.guess_correct_message())
     else:
         print(content.guess_incorrect_message())
-    pause()
+    _pause()
 
 
-def pause():
+def _pause():
     """
     Pause the interface to give the user time to read new content.
     """
     time.sleep(1)
 
 
-def get_guess(game):
+def _get_guess(game):
     """
     Gets a valid letter or word guess from the user.
 
@@ -108,34 +109,34 @@ def get_guess(game):
     valid_input_required = True
 
     while valid_input_required:
-        show_masked_word(game)
+        _show_masked_word(game)
         if game.previous_guesses:
-            show_previous_guesses(game.previous_guesses)
+            _show_previous_guesses(game.previous_guesses)
         guess = input(content.guess_prompt()).strip().upper()
-        pause()
+        _pause()
         if guess in game.previous_guesses:
-            show_previously_guessed_message()
-        elif is_valid_guess(guess):
+            _show_previously_guessed_message()
+        elif _is_valid_guess(guess):
             return guess
         else:
-            show_invalid_guess_message()
+            _show_invalid_guess_message()
 
 
-def show_previously_guessed_message():
+def _show_previously_guessed_message():
     """
     Informs the user that they have already made this guess before.
     """
     print(content.guessed_previously_message())
 
 
-def show_invalid_guess_message():
+def _show_invalid_guess_message():
     """
     Informs the user that their guess was invalid.
     """
     print(content.guess_invalid_message())
 
 
-def show_masked_word(game):
+def _show_masked_word(game):
     """Show the user the masked word (i.e. the current state of play).
 
     Args:
@@ -143,10 +144,10 @@ def show_masked_word(game):
     """
     print(content.masked_word_message())
     print(" ".join(game.masked_word))
-    pause()
+    _pause()
 
 
-def is_valid_guess(guess):
+def _is_valid_guess(guess):
     """
     Validates the user's guess. Valid guesses contain only alpha characters
     and spaces.
@@ -160,7 +161,7 @@ def is_valid_guess(guess):
     return guess.replace(" ", "").isalpha()
 
 
-def show_previous_guesses(guesses):
+def _show_previous_guesses(guesses):
     """Show the user information about their previous guesses.
 
     Args:
@@ -169,24 +170,24 @@ def show_previous_guesses(guesses):
     print(content.previous_guesses_message(), ", ".join(guesses))
 
 
-def show_instructions():
+def _show_instructions():
     """
     Shows the game's instructions to the user and provides
     navigation back to the main menu.
     """
     input(content.instructions())
-    pause()
+    _pause()
 
 
-def show_game_title():
+def _show_game_title():
     """
     Display the game's title.
     """
     art.tprint(content.game_title(), space=1)
-    pause()
+    _pause()
 
 
-def get_main_menu_option():
+def _get_main_menu_option():
     """
     Get a valid main menu option from the user.
 
@@ -196,11 +197,11 @@ def get_main_menu_option():
     valid_input_required = True
 
     print(content.main_menu_heading())
-    pause()
+    _pause()
     one, two, three = "1", "2", "3"
     while valid_input_required:
         option = input(content.main_menu_options(one, two, three)).strip()
-        pause()
+        _pause()
         if option == one:
             return MenuItem.PLAY
         elif option == two:

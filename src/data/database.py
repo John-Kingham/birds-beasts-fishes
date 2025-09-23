@@ -16,4 +16,4 @@ def get_animal_names():
     Returns:
         List[str]: A list of animal names.
     """
-    return github._get_animal_names()
+    return github.get_animal_names()

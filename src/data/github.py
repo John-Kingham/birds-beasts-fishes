@@ -5,7 +5,7 @@ This module is responsible for retrieving animal names from GitHub.
 import requests
 
 
-def _get_animal_names():
+def get_animal_names():
     """
     Gets a list of animal names.
 
