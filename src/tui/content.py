@@ -2,6 +2,8 @@
 This module is responsible for providing the text interface's content.
 """
 
+from src.data import database
+
 
 def exit_message():
     """
@@ -57,13 +59,21 @@ def game_over_message(game):
     num_letters = len(word)
     num_guesses = len(game.previous_guesses)
     score = game.final_score()
-
+    high_score = database.get_high_score_for(game.masked_word)
+    high_score_message = None
+    if score > high_score:
+        high_score_message = "That is better than your old high score of:"
+    elif score == high_score:
+        high_score_message = "That equals your previous high score of:"
+    else:
+        high_score_message = "That is worse than your previous high score of:"
     return (
         "\nWell done! "
-        f"You guessed that the word was: {" ".join(word)} !\n"
-        f"The number of letters in that word was: {num_letters} !\n"
-        f"The number of guesses you made was: {num_guesses} !\n"
-        f"This gives you a score for this word of: {score} !\n"
+        f"You guessed that the word was: {" ".join(word)}\n"
+        f"The number of letters in that word was: {num_letters}\n"
+        f"The number of guesses you made was: {num_guesses}\n"
+        f"This gives you a score for this word of: {score}\n"
+        f"{high_score_message} {high_score}\n"
         "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
         "!!! Press ENTER to return to the main menu! !!!\n"
         "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"

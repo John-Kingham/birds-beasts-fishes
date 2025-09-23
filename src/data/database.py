@@ -28,3 +28,22 @@ def save_score(word, score):
         score (int): The score.
     """
     google_api.save_score(word, score)
+
+
+def get_high_score_for(word):
+    """
+    Gets the previous high score for a word.
+
+    Args:
+        word (str): The word whose high score we are interested in.
+
+    Returns:
+        int: The high score if there is one, else zero.
+    """
+    records = google_api.get_all_records()
+    high_score = 0
+
+    for row in records:
+        if row["word"] == word and row["score"] > high_score:
+            high_score = row["score"]
+    return high_score

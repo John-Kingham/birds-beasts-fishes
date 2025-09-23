@@ -3,9 +3,6 @@ This module manages the user's interaction with the game using a
 text-based interface in the console.
 """
 
-# TODO: ADD HIGH SCORES VIA GOOGLE SHEET
-# TODO: AT END GAME, TELL THE USER THE LENGTH OF THE WORD
-
 import art
 from enum import Enum
 from src.data import database
@@ -64,7 +61,8 @@ def _play_game():
                 _show_game_over_message(game)
                 _save_final_score(game)
                 break
-    except Exception:
+    except Exception as e:
+        print(e)
         print(content.animal_names_error_message())
 
 

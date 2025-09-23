@@ -26,3 +26,13 @@ def save_score(word, score):
         score (int): The score.
     """
     SCORES.append_row([word, score])
+
+
+def get_all_records():
+    """Gets all records from the database.
+
+    Returns:
+        List[Dict]: Each dictionary in the list represents a row of data. Keys
+        are column headings and values are the values for that column & row.
+    """
+    return SCORES.get_all_records()
