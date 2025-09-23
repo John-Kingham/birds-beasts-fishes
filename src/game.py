@@ -17,7 +17,7 @@ class Game:
     4. Use .make_guess() to make a new guess.
     5. Use. is_over() to see if the game is over.
     6. Repeat 2 to 5 until the game is over.
-    7. Use .score() to get the game's final score.
+    7. Use .final_score() to get the game's final score.
     """
 
     def __init__(self):
@@ -135,3 +135,18 @@ class Game:
             self.__masked_word = list(self.__word_to_guess)
             guess_is_correct = True
         return guess_is_correct
+
+    def final_score(self):
+        """
+        Returns the game's final score.
+        Final score = (length of word / number of guesses) * 100 (to 0dp)
+
+        Returns:
+            int: The final score, if the game is over, else -1
+        """
+        if self.is_over():
+            word_length = len(self.masked_word)
+            num_guesses = len(self.previous_guesses)
+            return int(word_length / num_guesses * 100)
+        else:
+            return -1

@@ -59,20 +59,20 @@ def _play_game():
             guess_is_correct = game.make_guess(guess)
             _show_guess_feedback_message(guess_is_correct)
             if game.is_over():
-                _show_game_over_message(game.masked_word)
+                _show_game_over_message(game)
                 break
     except Exception:
         print(content.animal_names_error_message())
 
 
-def _show_game_over_message(guessed_word):
+def _show_game_over_message(game):
     """
     Shows a game over message the to user.
 
     Args:
-        guessed_word (str): The word correctly guessed by the user.
+        game (Game): The game that is now over.
     """
-    print(content.game_over_message(guessed_word))
+    print(content.game_over_message(game))
     input()
 
 
