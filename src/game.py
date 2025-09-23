@@ -3,7 +3,7 @@ This module is responsible for applying the rules of the Birds, Beasts and
 Fishes game, and maintaining the state of each game.
 """
 
-from src import database
+from src.data import database
 import random
 
 

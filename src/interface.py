@@ -3,6 +3,9 @@ This module manages the user's interaction with the game using a
 text-based interface in the console.
 """
 
+# TODO: PUT A SPACE BETWEEN EACH CHARACTER IN THE MASKED WORD BECAUSE
+# UNDERLINES LOOK LIKE ONE LONG LINE IN HEROKU
+
 import art
 from src import content
 from enum import Enum
