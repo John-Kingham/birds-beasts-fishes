@@ -3,11 +3,10 @@ This module manages the user's interaction with the game using a
 text-based interface in the console.
 """
 
-# TODO: MAKE SURE NAMES ARE PRIVATE OR PROTECTED AS APPROPRIATE
 # TODO: ADD HIGH SCORES VIA GOOGLE SHEET
 
 import art
-from src import content
+from src.tui import content
 from enum import Enum
 from src.game import Game
 import time

@@ -2,7 +2,7 @@
 This module is automatically run by Heroku, the deployment platform.
 """
 
-from src.interface import start_main_menu
+from src.tui.interface import start_main_menu
 
 
 def main():
