@@ -38,7 +38,7 @@ def instructions():
         "\nSCORE:\n"
         "Your score will be saved for each animal name.\n"
         "The score is calculated as:\n"
-        "The number of letters divided by the number of guesses.\n"
+        "The number of letters divided by the number of guesses, times 100.\n"
         "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
         "!!! Press enter to return to the main menu !!!\n"
         "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
