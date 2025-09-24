@@ -12,3 +12,51 @@ As the title suggests, all words are the names of birds, beasts or fishes (or an
 
 ![Game shown on multiple screen sizes](docs/images/responsive-screenshot.png)
 
+## User Experience Design
+
+I designed the program using the "five planes" UX design process.
+
+### Strategic Plane
+
+#### Product Owner Goals
+- Primary goal:
+  - To inspire children of (almost) all ages to take an interest in the natural world, animals, language and puzzles
+- Secondary goals:
+  - To improve the player’s spelling skills
+  - To give players a calming way to enjoy their spare time.
+
+#### User goals
+- Primary goal:
+  - To play a fun game
+- Secondary goals:
+  - To test their spelling abilities
+  - To learn some new facts about animals
+  - To have an alternative to hyperactive video games
+
+### Scope Plane
+
+#### User stories
+1. As a user, I want to see a simple text-based interface so I’m not distracted by vivid sounds or images while playing the game.
+2. As a user, I want to be able to read the game’s instructions so I know how to play.
+3. As a user, I want to play a simple word game that is fun, challenging and educational.
+4. As a user, I want to increase my understanding of animals and nature.
+5. As a user, I want to see my previous scores, so I can see if I’m improving.
+
+### Structure Plane
+To fulfil the user stories, the user interface has repeating text structures (e.g. sentences, blocks, menus) that take user input, provide feedback and show the user their progress through the game.
+
+The main structural elements of the user interface are:
+
+- Game title
+- Main menu
+- Instructions
+- Game “screen” (which consists of multiple sub-elements)
+- exit message
+
+The original design for the flow of control through these elements is shown in the flow chart below.
+
+![Flow of control chart](docs/images/flow-chart.png)
+
+### Skeleton Plane
+The wireframe below show the conceptual design for each of the user interface's main structural elements. As this game is only available in the terminal, there are no wireframes specifically for tablets or mobile devices.
+
