@@ -192,6 +192,7 @@ def _show_game_title():
     Display the game's title.
     """
     art.tprint(content.game_title(), space=1)
+    print(content.game_subtitle())
     _pause()
 
 

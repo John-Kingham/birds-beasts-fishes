@@ -163,6 +163,19 @@ def game_title():
     return "Birds, Beasts\nand Fishes"
 
 
+def game_subtitle():
+    """
+    Returns the game's subtitle.
+
+    Returns:
+        str: The game's subtitle.
+    """
+    return (
+        "Welcome to Birds, Beasts and Fishes, the word game for "
+        "animal lovers and puzzle lovers everywhere!\n"
+    )
+
+
 def main_menu_heading():
     """Returns a heading for the main menu.
 
