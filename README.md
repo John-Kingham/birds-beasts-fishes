@@ -19,6 +19,7 @@ I designed the program using the "five planes" UX design process.
 ### Strategic Plane
 
 #### Product Owner Goals
+
 - Primary goal:
   - To inspire children of (almost) all ages to take an interest in the natural world, animals, language and puzzles
 - Secondary goals:
@@ -26,6 +27,7 @@ I designed the program using the "five planes" UX design process.
   - To give players a calming way to enjoy their spare time.
 
 #### User goals
+
 - Primary goal:
   - To play a fun game
 - Secondary goals:
@@ -36,6 +38,7 @@ I designed the program using the "five planes" UX design process.
 ### Scope Plane
 
 #### User stories
+
 1. As a user, I want to see a simple text-based interface so I’m not distracted by vivid sounds or images while playing the game.
 2. As a user, I want to be able to read the game’s instructions so I know how to play.
 3. As a user, I want to play a simple word game that is fun, challenging and educational.
@@ -43,6 +46,7 @@ I designed the program using the "five planes" UX design process.
 5. As a user, I want to see my previous scores, so I can see if I’m improving.
 
 ### Structure Plane
+
 To fulfil the user stories, the user interface has repeating text structures (e.g. sentences, blocks, menus) that take user input, provide feedback and show the user their progress through the game.
 
 The main structural elements of the user interface are:
@@ -58,5 +62,27 @@ The original design for the flow of control through these elements is shown in t
 ![Flow of control chart](docs/images/flow-chart.png)
 
 ### Skeleton Plane
+
 The wireframe below show the conceptual design for each of the user interface's main structural elements. As this game is only available in the terminal, there are no wireframes specifically for tablets or mobile devices.
 
+![Wireframes of the user interface](docs/images/wireframes.png)
+
+### Surface Plane
+
+#### Colour palette
+
+Although it is possible to show colours in the terminal, I decided to keep the game’s design simple by using the default text and background colours (typically white and black, respectively).
+
+#### Custom fonts
+
+The game uses the terminal's default font for all text, except for the game's title. The game's title uses the ASCII Art Library For Python to produce a large and attention-grabbing font.
+
+- [ASCII Art Library For Python](https://pypi.org/project/art/)
+
+#### Content
+
+As a simple word game, the program has little in the way of written content, other than the text that makes up the structural elements of the user interface. 
+
+The animal names are fetched from the Internet via GitHub:
+
+- [List of Animal Names on GitHub in JSON format](https://gist.github.com/borlaym/585e2e09dd6abd9b0d0a)
