@@ -1,5 +1,7 @@
 # Birds, Beasts and Fishes
 
+- [Birds, Beasts and Fishes (play the game on Heroku)](https://birds-beasts-fishes-428a18feeb9b.herokuapp.com/) 
+
 Birds, Beasts and Fishes is a command line word game for children of (almost) all ages.
 
 It is based on a chalk-and-slate game of the same name, described in Alice Gomme’s 1894 book, The Traditional Games of England, Scotland and Ireland.
@@ -86,3 +88,20 @@ As a simple word game, the program has little in the way of written content, oth
 The animal names are fetched from the Internet via GitHub:
 
 - [List of Animal Names on GitHub in JSON format](https://gist.github.com/borlaym/585e2e09dd6abd9b0d0a)
+
+## Technologies used
+
+### Languages
+
+- [Python](https://www.python.org/)
+
+### Installed Python Libraries
+
+- [art (ASCII Art Library For Python)](https://pypi.org/project/art/)
+- [requests (Python HTTP for Humans)](https://pypi.org/project/requests/)
+- [gspread (Google Spreadsheets Python API)](https://pypi.org/project/gspread/)
+- [google-auth (Google Authentication Library)](https://pypi.org/project/google-auth/)
+
+### Programs & Platforms
+- [Google Sheets](https://workspace.google.com/products/sheets/)
+
