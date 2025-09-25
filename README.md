@@ -56,7 +56,7 @@ The main structural elements of the user interface are:
 - Game title
 - Main menu
 - Instructions
-- Game “screen” (which consists of multiple sub-elements)
+- Game Screen/Loop (which consists of multiple sub-elements)
 - exit message
 
 The original design for the flow of control through these elements is shown in the flow chart below.
@@ -89,7 +89,7 @@ The animal names are fetched from the Internet via GitHub:
 
 - [List of Animal Names on GitHub in JSON format](https://gist.github.com/borlaym/585e2e09dd6abd9b0d0a)
 
-## Technologies used
+## Technologies Used
 
 ### Languages
 
@@ -101,7 +101,36 @@ The animal names are fetched from the Internet via GitHub:
 - [requests (Python HTTP for Humans)](https://pypi.org/project/requests/)
 - [gspread (Google Spreadsheets Python API)](https://pypi.org/project/gspread/)
 - [google-auth (Google Authentication Library)](https://pypi.org/project/google-auth/)
+- (plus required dependencies of the above libraries)
 
-### Programs & Platforms
+### Other Technologies
 - [Google Sheets](https://workspace.google.com/products/sheets/)
+
+## Features
+
+### Implemented Features
+
+#### Game Title
+
+- When the game first loads, the user is shown the game's title and sub-title.
+- The title uses ASCII art to produce a very large font, which makes the "loading screen" more engaging for younger players.
+- This section is useful to users because the title clearly tells them which game they've launched, and the sub-title tells them that they're about to play an animal-based word game.
+
+![Game title](docs/images/game-title.png)
+
+#### Main Menu
+
+- The main menu is shown at the start of each game (a "game" consists of one round, and ends when a word has been guessed).
+- It has a heading with a thick border to separate it from any preceding text, and so the user knows they're being asked something important (the border is made of question marks).
+- Under the heading, the user is presented with options to play the game, read the instructions, or exit the game.
+- This is useful to users because it gives them an opportunity to read the instructions before playing a new round, or exiting if they don't want to play.
+
+![Main menu](docs/images/main-menu.png)
+
+#### Instructions
+
+####  Game Screen/Loop
+#### Exit Message
+
+### Future Features
 
