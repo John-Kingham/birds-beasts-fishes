@@ -158,3 +158,13 @@ The animal names are fetched from the Internet via GitHub:
 
 ### Future Features
 
+#### Animal Descriptions
+
+- When the user correctly guesses an animal name, a detailed description of that animal is displayed (fetched from a relevant dictionary-like web API).
+- This feature was included in the design stage but wasn't implemented in this iteration due to time constraints.
+
+#### Multiple User High Scores
+
+- The user is able to enter a username so that the game can record different high scores for different users. This allows players to compete against one another on the same machine, which isn't currently possible.
+- This is a relatively simple feature that is a good candidate for the next development iteration.
+
