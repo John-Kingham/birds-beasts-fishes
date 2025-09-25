@@ -57,7 +57,8 @@ The main structural elements of the user interface are:
 - Main menu
 - Instructions
 - Game Loop/Screen (which consists of multiple sub-elements)
-- exit message
+- Win Message
+- Exit Message
 
 The original design for the flow of control through these elements is shown in the flow chart below.
 
@@ -146,13 +147,21 @@ The animal names are fetched from the Internet via GitHub:
 
 ![Game loop](docs/images/game-loop.png)
 
-#### Exit Message
+#### Win Message
 
-- This section is shown when the user guesses the word.
+- This section is shown when the user guesses the word and wins the game.
 - It shows the user the full word, so they know which animal name they guessed, even if they guessed letter-by-letter.
 - It shows the user their score, and breaks down how that score was achieved (the number of letters in the word and the number of guesses). It also tells them how their score compares to their previous high score for that word.
 - Users can exit this round of the game and return to the main menu by pressing enter.
 - This section is useful to users because it rewards them with positive feedback on their efforts, and tells them if they beat their previous high score or not.
+
+![Win message](docs/images/win-message.png)
+
+#### Exit Message
+
+- This section is shown to users when the choose the Exit option from the main menu.
+- A message is displayed thanking the user for playing. This may create a feeling of goodwill towards the game and increase the odds of them playing again.
+- This section is useful to users because it gives them clear feedback that they are leaving the game.
 
 ![Exit message](docs/images/exit-message.png)
 
@@ -168,3 +177,10 @@ The animal names are fetched from the Internet via GitHub:
 - The user is able to enter a username so that the game can record different high scores for different users. This allows players to compete against one another on the same machine, which isn't currently possible.
 - This is a relatively simple feature that is a good candidate for the next development iteration.
 
+## Testing
+
+The game was thoroughly tested, with all tests documented in [testing.md](docs/testing.md).
+
+## Deployment
+
+## Credits
