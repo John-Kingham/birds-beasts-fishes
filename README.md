@@ -56,7 +56,7 @@ The main structural elements of the user interface are:
 - Game title
 - Main menu
 - Instructions
-- Game Screen/Loop (which consists of multiple sub-elements)
+- Game Loop/Screen (which consists of multiple sub-elements)
 - exit message
 
 The original design for the flow of control through these elements is shown in the flow chart below.
@@ -114,7 +114,7 @@ The animal names are fetched from the Internet via GitHub:
 
 - When the game first loads, the user is shown the game's title and sub-title.
 - The title uses ASCII art to produce a very large font, which makes the "loading screen" more engaging for younger players.
-- This section is useful to users because the title clearly tells them which game they've launched, and the sub-title tells them that they're about to play an animal-based word game.
+- This is useful to users because the title clearly tells them which game they've launched, and the sub-title tells them that they're about to play an animal-based word game.
 
 ![Game title](docs/images/game-title.png)
 
@@ -129,8 +129,32 @@ The animal names are fetched from the Internet via GitHub:
 
 #### Instructions
 
-####  Game Screen/Loop
+- The game includes an instructions section, which is accessible from the main menu.
+- The instructions section explains how the game works and how the game's scoring system works.
+- The user can return to the main menu by pressing enter.
+- This is useful to users because it tells them how to play the game, and how to get a higher score (guess long words in as few guesses as possible).
+
+![Instructions](docs/images/instructions.png)
+
+####  Game Loop
+
+- If the user chooses the "Play game" option from the main menu, they will enter the main game loop.
+- The game loop shows the user the word to guess, with most of the letters hidden. The user is prompted to enter their guess.
+- When a guess is entered, the user will be shown one of several sections depending on whether their guess was invalid, matched an existing guess, or was correct. You can see screenshots for each of these in the testing section.
+- After a valid guess is entered, this section is shown again, but the correctly guessed letters will now be visible, along with a list of previous guesses.
+- This is useful to users because it enables them to: (a) see the word they have to guess, (b) enter guesses, and (c) get feedback on their guess. Without this feature, there is no game.
+
+![Game loop](docs/images/game-loop.png)
+
 #### Exit Message
+
+- This section is shown when the user guesses the word.
+- It shows the user the full word, so they know which animal name they guessed, even if they guessed letter-by-letter.
+- It shows the user their score, and breaks down how that score was achieved (the number of letters in the word and the number of guesses). It also tells them how their score compares to their previous high score for that word.
+- Users can exit this round of the game and return to the main menu by pressing enter.
+- This section is useful to users because it rewards them with positive feedback on their efforts, and tells them if they beat their previous high score or not.
+
+![Exit message](docs/images/exit-message.png)
 
 ### Future Features
 
