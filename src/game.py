@@ -15,7 +15,7 @@ class Game:
     2. Use .masked_word to see which letters have been correctly guessed.
     3. Use .previous_guesses to see previous guesses.
     4. Use .make_guess() to make a new guess.
-    5. Use. is_over() to see if the game is over.
+    5. Use .is_over() to see if the game is over.
     6. Repeat 2 to 5 until the game is over.
     7. Use .final_score() to get the game's final score.
     """

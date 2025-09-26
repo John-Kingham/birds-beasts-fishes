@@ -45,3 +45,5 @@ This game is designed to be played in the terminal, so its responsiveness to dif
 
 ## Code Validation
 
+### Python Validation
+

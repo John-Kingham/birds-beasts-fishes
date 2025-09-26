@@ -177,6 +177,16 @@ The animal names are fetched from the Internet via GitHub:
 - The user is able to enter a username so that the game can record different high scores for different users. This allows players to compete against one another on the same machine, which isn't currently possible.
 - This is a relatively simple feature that is a good candidate for the next development iteration.
 
+## Data Model
+
+The program uses a `Game` class to manage the state of the game, with instance variables for the word to guess, the masked word (showing which letters are hidden) and the player's previous guesses.
+
+`Game` has the following methods to enable the user interface to interact with and change the state of the game:
+
+- `.make_guess()` - makes a new guess and returns whether the guess was correct
+- `.is_over()` - returns whether the game is over
+- `.final_score()` - returns the game's final score
+
 ## Testing
 
 The game was thoroughly tested, with all tests documented in [testing.md](docs/testing.md).
