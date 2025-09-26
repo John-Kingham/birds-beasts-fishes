@@ -1,6 +1,6 @@
 # Birds, Beasts and Fishes
 
-- [Birds, Beasts and Fishes (play the game on Heroku)](https://birds-beasts-fishes-428a18feeb9b.herokuapp.com/) 
+- [Birds, Beasts and Fishes (deployed on Heroku)](https://birds-beasts-fishes-428a18feeb9b.herokuapp.com/) 
 
 Birds, Beasts and Fishes is a command line word game for children of (almost) all ages.
 
@@ -193,4 +193,55 @@ The game was thoroughly tested, with all tests documented in [testing.md](docs/t
 
 ## Deployment
 
+Birds, Beasts and Fishes has been deployed via [Heroku](https://www.heroku.com/) using [Code Institute](https://codeinstitute.net/)'s mock terminal for the Web.
+
+- [Birds, Beasts and Fishes (deployed on Heroku)](https://birds-beasts-fishes-428a18feeb9b.herokuapp.com/) 
+
+### Local Development
+
+This project can be cloned or forked to make a local copy on your own system.
+
+#### Cloning
+
+You can clone the repository using these steps:
+
+1. Go to the [GitHub repository](https://github.com/John-Kingham/birds-beasts-fishes).
+2. Click on the green "Code" button near the top, above the commits and files.
+3. Select whether you prefer to clone using "HTTPS", "SSH", or "GitHub CLI", and click the "copy to clipboard" icon to copy the URL to your clipboard.
+4. Within your IDE, open "Git Bash" or "Terminal".
+5. Change the current working directory to the location where you want the cloned directory.
+6. In your IDE Terminal, paste the previously copied URL.
+7. Press "Enter" to create your local clone.
+
+#### Forking
+
+By forking the GitHub repository, you make a copy of the original repository on your GitHub account. You can then view or make changes to that copy without affecting the original repository. You can fork this repository using the following steps:
+
+1. Log in to GitHub and locate the [GitHub repository](https://github.com/John-Kingham/birds-beasts-fishes).
+2. At the top of the repository, just below the "Settings" button on the menu, locate and click the "Fork" Button.
+3. You should now have a copy of the original repository in your own GitHub account.
+
+### Deployment to Heroku
+
+This game is designed to run in the terminal, but it can also be deployed to Heroku by following the steps below.
+
+- In your Google account, create a Google Sheet called "birds_beasts_fishes", with a sheet called "scores", with two columns called "word" and "score".
+- Using your Google account, go to the [Google Cloud Platform](https://console.cloud.google.com/) and set up a new project.
+- Enable the APIs for Google Drive and Google Sheets (the details for this are beyond the scope of this document).
+- Download the project's Google Drive API credentials to your local development folder as "creds.json". Include that file in .gitignore.
+- Copy the "client_email" credential and share the Google Sheet with that email as an Editor (this gives the program access to your spreadsheet for saving high scores).
+- In your Heroku account, create a new app.
+- Add two config variables
+  - KEY=PORT, VALUE=8000
+  - KEY=CREDS, VALUE=the contents of creds.json
+- Add buildpacks for Python and Node.js in that order.
+- Connect the Heroku app to your GitHub repository.
+- Deploy the main branch in Heroku.
+- Wait for the site to deploy and check that it has deployed correctly.
+
+### Local VS Deployment
+
+There are no remaining major differences between the local terminal version when compared to the deployed version online.
+
 ## Credits
+
