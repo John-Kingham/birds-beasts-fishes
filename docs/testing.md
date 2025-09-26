@@ -47,3 +47,36 @@ This game is designed to be played in the terminal, so its responsiveness to dif
 
 ### Python Validation
 
+Python code was validated using the [Code Institute Python Linter](https://pep8ci.herokuapp.com/).
+
+#### run.py Validation
+
+All clear, no errors found.
+
+#### src/game.py Validation
+
+All clear, no errors found.
+
+#### src/data/database.py Validation
+
+All clear, no errors found.
+
+#### src/data/github_api.py Validation
+
+All clear, no errors found.
+
+#### src/data/google_api.py Validation
+
+All clear, no errors found.
+
+#### src/tui/content.py Validation
+
+All clear, no errors found.
+
+#### src/tui/interface.py Validation
+
+All clear, no errors found.
+
+## Unfixed Bugs
+
+There are no unfixed bugs that I am aware of. Having said that, even after thorough testing I cannot completely rule out the possibility of some hidden bugs.
