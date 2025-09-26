@@ -245,3 +245,38 @@ There are no remaining major differences between the local terminal version when
 
 ## Credits
 
+### User Experience Design
+
+### Strategy Plane
+
+- I used the five planes method (Strategy, Scope, Structure, Skeleton, Surface), as detailed in [The Elements of User Experience](http://www.jjg.net/elements/).
+
+#### Structure Plane
+
+- I used [Lucidchart](https://www.lucidchart.com/) to create the high level structure and navigation of the user interface.
+
+#### Skeleton Plane
+
+- I built wireframes for the main screen elements using [Balsamiq](https://balsamiq.com/).
+
+#### Surface Plane
+
+- I used the [ASCII Art Library For Python](https://pypi.org/project/art/) to create a large font for the game's title.
+- The animal names are fetched from a [list of animal names on GitHub](https://gist.github.com/borlaym/585e2e09dd6abd9b0d0a).
+
+### Development
+
+- I wrote the project's code using [Visual Studio Code](https://code.visualstudio.com/).
+- I used [W3Schools](https://www.w3schools.com/), [Code Institute](https://codeinstitute.net/), [Codecademy](https://www.codecademy.com/) and [Microsoft Copilot](https://copilot.microsoft.com/) for general referencing.
+- I learned about Python Requests, property decorators, Enums and other more advanced Python features from Codecademy.
+- I learned about Python modules from my mentor.
+- Although I used various information sources to support the development of this project, no external code was copy/pasted into the project or copied verbatim. 
+
+### Documentation
+
+- I used [Code Institute's README.md template](https://github.com/Code-Institute-Solutions/readme-template/blob/master/README.md) as the starting point for this document.
+- I used [Am I Responsive](https://ui.dev/amiresponsive) to generate the multi-screen image shown at the start of the README.
+
+## People
+
+- Last but not least, I would like to thank my mentor, [Simen Daehlin](https://github.com/Eventyret).
