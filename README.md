@@ -60,13 +60,13 @@ The main structural elements of the user interface are:
 - Win Message
 - Exit Message
 
-The original design for the flow of control through these elements is shown in the flow chart below.
+The original design for the flow of control through these elements is shown in the flow chart below. There are minor differences between this flowchart and the final game, due to user feedback.
 
 ![Flow of control chart](docs/images/flow-chart.png)
 
 ### Skeleton Plane
 
-The wireframe below show the conceptual design for each of the user interface's main structural elements. As this game is only available in the terminal, there are no wireframes specifically for tablets or mobile devices.
+The wireframe below show the conceptual design for each of the user interface's main structural elements. As this game is only available in the terminal, there are no wireframes specifically for tablets or mobile devices. There are minor differences between the wireframes and the final game, due to user feedback.
 
 ![Wireframes of the user interface](docs/images/wireframes.png)
 
