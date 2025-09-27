@@ -3,9 +3,11 @@ This module is responsible for storing and retrieving high scores using
 Google Sheets.
 """
 
+# these imports enable the program to use a Google Sheet as a database
 import gspread
 from google.oauth2.service_account import Credentials
 
+# these constants are copied almost identically from the Code Institute course
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",

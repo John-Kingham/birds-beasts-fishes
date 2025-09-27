@@ -2,6 +2,7 @@
 This module is responsible for retrieving animal names from GitHub.
 """
 
+# import the requests library to access an external web api
 import requests
 
 
@@ -15,10 +16,10 @@ def get_animal_names():
     Returns:
         List[str]: A list of animal names.
     """
-    url = (
+    animal_names_url = (
         "https://gist.githubusercontent.com/borlaym/585e2e09dd6abd9b0d0a/"
         "raw/6e46db8f5c27cb18fd1dfa50c7c921a0fbacbad0/animals.json"
     )
-    response = requests.get(url, timeout=1)
+    response = requests.get(animal_names_url, timeout=1)
     response.raise_for_status()
     return response.json()
