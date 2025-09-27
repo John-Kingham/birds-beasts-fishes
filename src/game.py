@@ -3,21 +3,22 @@ This module is responsible for applying the rules of the Birds, Beasts and
 Fishes game, and maintaining the state of each game.
 """
 
+# random is imported to enable the selection of a random animal name
 from src.data import database
 import random
 
 
 class Game:
     """
-    Represents one round of the Bird, Beasts and Fishes game. To play the game,
-    follow this sequence:
+    A Game object represents one round of the Bird, Beasts and Fishes game.
+    To play the game, follow this sequence:
     1. Create a new Game object.
     2. Use .masked_word to see which letters have been correctly guessed.
     3. Use .previous_guesses to see previous guesses.
     4. Use .make_guess() to make a new guess.
     5. Use .is_over() to see if the game is over.
     6. Repeat 2 to 5 until the game is over.
-    7. Use .final_score() to get the game's final score.
+    7. When the game is over, use .final_score() to get the final score.
     """
 
     def __init__(self):

@@ -3,6 +3,8 @@ This module manages the user's interaction with the game using a
 text-based interface in the console.
 """
 
+# art, Enum and time are external libraries imported to provide fonts, an
+# enumeration for menu item constants and a sleep/pause function, respectively
 import art
 from enum import Enum
 from src.data import database
