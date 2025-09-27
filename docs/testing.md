@@ -13,10 +13,10 @@
 
 |Feature|Expect|Action|Result|Image
 |---|---|---|---|---|
-|Menu option 1 ("Play game")|When chosen, the Game Screen section is shown|Selected option 1|As expected|![Instructions](images/instructions.png)|
-|Menu option 2 ("Read instructions")|When chosen, the Instructions section is shown|Selected option 2|As expected|![Game Screen](images/game-screen.png)|
-|Menu option 3 ("Exit")|When chosen, the Exit Message is shown and the program exits|Selected option 3|As expected|![exit message](images/exit-message.png)|
-|Menu option validation|When an invalid option is entered, an error message is shown and the Main Menu is redisplayed|Entered an invalid option|As expected|![exit message](images/main-menu-error-message.png)|
+|Menu option 1 ("Play game")|When chosen, the Game Screen section is shown|Selected option 1|As expected|![Game screen](images/game-screen.png)|
+|Menu option 2 ("Read instructions")|When chosen, the Instructions section is shown|Selected option 2|As expected|![Instructions](images/instructions.png)|
+|Menu option 3 ("Exit")|When chosen, the Exit Message is shown and the program exits|Selected option 3|As expected|![Exit message](images/exit-message.png)|
+|Menu option validation|When an invalid option is entered, an error message is shown and the Main Menu is redisplayed|Entered an invalid option|As expected|![Error message](images/main-menu-error-message.png)|
 
 ### Instructions Functionality
 
@@ -37,7 +37,8 @@
 
 |Feature|Expect|Action|Result|Image
 |---|---|---|---|---|
-|Return to Main Menu|When enter is pressed from the Win Message section, the Main Menu is shown|Pressed enter|As expected|![Instructions](images/win-message-enter.png)|
+|High score comparison|When a word that has already been played is guessed again, the current score is compared to the high score|Guessed a previously guessed word|As expected|![Win message](images/win-message-high-score.png)|
+|Return to Main Menu|When enter is pressed from the Win Message section, the Main Menu is shown|Pressed enter|As expected|![Win message](images/win-message-enter.png)|
 
 ## Responsiveness
 

@@ -140,7 +140,7 @@ The animal names are fetched from the Internet via GitHub:
 ####  Game Screen
 
 - If the user chooses the "Play game" option from the main menu, they will enter the main game screen.
-- The game screen shows the user the word to guess, with most of the letters hidden. The user is prompted to enter their guess.
+- The game screen shows the user a random animal name to guess, with most of the letters hidden. The user is prompted to enter their guess.
 - When a guess is entered, the user will be shown one of several sections depending on whether their guess was invalid, matched an existing guess, or was correct. You can see screenshots for each of these in the testing section.
 - After a valid guess is entered, this section is shown again, but the correctly guessed letters will now be visible, along with a list of previous guesses.
 - This is useful to users because it enables them to: (a) see the word they have to guess, (b) enter guesses, and (c) get feedback on their guess. Without this feature, there is no game.
