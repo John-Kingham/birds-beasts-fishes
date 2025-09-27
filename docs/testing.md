@@ -22,16 +22,16 @@
 
 |Feature|Expect|Action|Result|Image
 |---|---|---|---|---|
-|Return to Main Menu|When enter is pressed from the Instructions section, the Main Menu is shown|Pressed enter|As expected|![Instructions](images/main-menu-after-instructions.png)|
+|Return to Main Menu|When enter is pressed from the Instructions section, the Main Menu is shown|Pressed enter|As expected|![Main menu after instructions](images/main-menu-after-instructions.png)|
 
 ### Game Screen Functionality
 
 |Feature|Expect|Action|Result|Image
 |---|---|---|---|---|
-|Incorrect guess|When an incorrect guess is entered, a relevant message is shown and the Game Screen text is redisplayed; the word to guess is unchanged and the list of previous guesses includes the incorrect guess|Entered an incorrect guess|As expected|![Instructions](images/game-screen-incorrect-guess.png)|
-|Invalid guess|When an invalid (non-alphabetical) guess is entered, a relevant message is shown and the Game Screen text is redisplayed; the word to guess and list of previous guesses are unchanged|Entered an invalid guess|As expected|![Instructions](images/game-screen-invalid-guess.png)|
-|Correct letter guess|When a correct letter is entered, a relevant message is shown and the Game Screen text is redisplayed; the word to guess and list of previous guesses are updated to include the letter|Entered a correct letter|As expected|![Instructions](images/game-screen-correct-letter-guess.png)|
-|Correct word guess|When a correct animal name guess is entered, the Win Message section is shown|Entered a correct animal name guess|As expected|![Instructions](images/game-screen-correct-word-guess.png)|
+|Incorrect guess|When an incorrect guess is entered, a relevant message is shown and the Game Screen text is redisplayed; the word to guess is unchanged and the list of previous guesses includes the incorrect guess|Entered an incorrect guess|As expected|![Incorrect guess message](images/game-screen-incorrect-guess.png)|
+|Invalid guess|When an invalid (non-alphabetical) guess is entered, a relevant message is shown and the Game Screen text is redisplayed; the word to guess and list of previous guesses are unchanged|Entered an invalid guess|As expected|![Invalid guess message](images/game-screen-invalid-guess.png)|
+|Correct letter guess|When a correct letter is entered, a relevant message is shown and the Game Screen text is redisplayed; the word to guess and list of previous guesses are updated to include the letter|Entered a correct letter|As expected|![Correct letter message](images/game-screen-correct-letter-guess.png)|
+|Correct word guess|When a correct animal name guess is entered, the Win Message section is shown|Entered a correct animal name guess|As expected|![Win message](images/game-screen-correct-word-guess.png)|
 
 ### Win Message Functionality
 
