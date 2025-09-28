@@ -193,55 +193,71 @@ The game was thoroughly tested, with all tests documented in [testing.md](docs/t
 
 ## Deployment
 
-Birds, Beasts and Fishes has been deployed via [Heroku](https://www.heroku.com/) using [Code Institute](https://codeinstitute.net/)'s mock terminal for the Web.
+Birds, Beasts and Fishes is a text-based game, designed to be played locally in the terminal. For demonstration purposes, it has also been deployed to the Internet via [Heroku](https://www.heroku.com/) using [Code Institute](https://codeinstitute.net/)'s mock terminal for the Web.
 
-- [Birds, Beasts and Fishes (deployed on Heroku)](https://birds-beasts-fishes-428a18feeb9b.herokuapp.com/) 
+- [Birds, Beasts and Fishes (play the game on Heroku)](https://birds-beasts-fishes-428a18feeb9b.herokuapp.com/)
 
-### Local Development
+This project can be cloned to make a copy on your local machine or forked to make a copy on your GitHub account.
 
-This project can be cloned or forked to make a local copy on your own system.
-
-#### Cloning
+### Cloning
 
 You can clone the repository using these steps:
 
 1. Go to the [GitHub repository](https://github.com/John-Kingham/birds-beasts-fishes).
-2. Click on the green "Code" button near the top, above the commits and files.
-3. Select whether you prefer to clone using "HTTPS", "SSH", or "GitHub CLI", and click the "copy to clipboard" icon to copy the URL to your clipboard.
-4. Within your IDE, open "Git Bash" or "Terminal".
+2. Click on the green Code button near the top.
+3. Select whether you prefer to clone using HTTPS, SSH, or GitHub CLI, and copy the URL to your clipboard.
+4. On your local machine, open your terminal (or Git Bash, depending on your operating system).
 5. Change the current working directory to the location where you want the cloned directory.
-6. In your IDE Terminal, paste the previously copied URL.
-7. Press "Enter" to create your local clone.
+6. In your terminal, type the following command to clone the repository:
+	- `git clone https://github.com/John-Kingham/birds-beasts-fishes.git`
+7. Press Enter to create your local clone.
 
-#### Forking
+### Forking
 
-By forking the GitHub repository, you make a copy of the original repository on your GitHub account. You can then view or make changes to that copy without affecting the original repository. You can fork this repository using the following steps:
+By forking the GitHub Repository, you make a copy of the original repository on your GitHub account to view and/or make changes without affecting the original repository. You can fork this repository by using the following steps:
 
 1. Log in to GitHub and locate the [GitHub repository](https://github.com/John-Kingham/birds-beasts-fishes).
-2. At the top of the repository, just below the "Settings" button on the menu, locate and click the "Fork" Button.
+2. At the top of the repository, click the Fork button.
 3. You should now have a copy of the original repository in your own GitHub account.
+
+### Google Sheet Setup
+
+The game uses a [Google Sheet](https://workspace.google.com/products/sheets/) to store high scores. To deploy the game locally or remotely, you will need to set up a Google Sheet using the steps below:
+
+1. In your Google account, create a Google Sheet called "birds_beasts_fishes". It should have a sheet called "scores", with two columns called "word" and "score".
+2. Go to the [Google Cloud Platform](https://console.cloud.google.com/) and set up a new project.
+3. In that project, enable the APIs for Google Drive and Google Sheets.
+4. Create an Editor service account and a JSON credentials file for the Google Drive API, and save the credentials to your local machine.
+5. In Google Sheets, share your Google Sheet with the email labelled as client_email in the credentials file. Give the email Editor access so the game can update the spreadsheet.
+
+These steps are missing some details that are beyond the scope of this document. If you need additional information to set up access to your Google Sheet, you should read the official Google Sheets and/or Google Cloud Platform documentation.
+
+### Local Deployment
+
+To deploy the game locally, you will need to install required libraries and set up access to your Google Sheet.
+
+1. Clone the remote repository to your local machine.
+2. Start a Python virtual environment of your choice (to avoid loading required libraries into your global environment).
+3. Run `pip install -r requirements.txt` to install required libraries.
+4. If you haven't already, follow the steps in the Google Sheet Setup section above.
+5. Move/copy the Google Drive API credentials file into the local repository's root directory and rename it to creds.json.
+6. Call run.py. 
+7. The game should run and have read/write access to your Google Sheet.
 
 ### Deployment to Heroku
 
-This game is designed to run in the terminal, but it can also be deployed to Heroku by following the steps below.
+The game can also be deployed to Heroku by following the steps below.
 
-- In your Google account, create a Google Sheet called "birds_beasts_fishes", with a sheet called "scores", with two columns called "word" and "score".
-- Using your Google account, go to the [Google Cloud Platform](https://console.cloud.google.com/) and set up a new project.
-- Enable the APIs for Google Drive and Google Sheets (the details for this are beyond the scope of this document).
-- Download the project's Google Drive API credentials to your local development folder as "creds.json". Include that file in .gitignore.
-- Copy the "client_email" credential and share the Google Sheet with that email as an Editor (this gives the program access to your spreadsheet for saving high scores).
-- In your Heroku account, create a new app.
-- Add two config variables
-  - KEY=PORT, VALUE=8000
-  - KEY=CREDS, VALUE=the contents of creds.json
-- Add buildpacks for Python and Node.js in that order.
-- Connect the Heroku app to your GitHub repository.
-- Deploy the main branch in Heroku.
-- Wait for the site to deploy and check that it has deployed correctly.
+1. In your Heroku account, create a new app.
+2. Add two config variables:
+   - KEY=PORT, VALUE=8000
+   - KEY=CREDS, VALUE=the contents of the Google Drive API credentials file
+3. Add buildpacks for Python and Node.js in that order.
+4. Connect the Heroku app to your GitHub repository.
+5. Deploy the main branch in Heroku.
+6. Wait for the site to deploy and then visit the deployed site to check that it has deployed correctly.
 
-### Local VS Deployment
-
-There are no remaining major differences between the local terminal version when compared to the deployed version online.
+These steps require knowledge of Heroku that is beyond the scope of this document. If you need additional information to set up your Heroku deployment, you should read the official Heroku documentation.
 
 ## Credits
 
