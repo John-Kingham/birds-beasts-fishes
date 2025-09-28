@@ -61,11 +61,11 @@ def game_over_message(game):
     high_score = data_manager.get_high_score_for(game.masked_word)
     high_score_message = None
     if score > high_score:
-        high_score_message = "That is better than your old high score of:"
+        high_score_message = "That is better than the previous high score of:"
     elif score == high_score:
-        high_score_message = "That equals your previous high score of:"
+        high_score_message = "That equals the current high score of:"
     else:
-        high_score_message = "That is worse than your previous high score of:"
+        high_score_message = "That is worse than the current high score of:"
     return (
         "\nWell done! "
         f"You guessed that the word was: {" ".join(word)}\n"
