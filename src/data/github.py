@@ -2,7 +2,6 @@
 This module is responsible for retrieving animal names from GitHub.
 """
 
-# import the requests library to access an external web api
 import requests
 
 

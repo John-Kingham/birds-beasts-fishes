@@ -3,8 +3,8 @@ This module is responsible for managing the storage and retrieval of
 persistent data.
 """
 
-from src.data import github_api
-from src.data import google_api
+from src.data import github
+from src.data import google_db
 
 
 def get_animal_names():
@@ -17,7 +17,7 @@ def get_animal_names():
     Returns:
         List[str]: A list of animal names.
     """
-    return github_api.get_animal_names()
+    return github.get_animal_names()
 
 
 def save_score(word, score):
@@ -27,7 +27,7 @@ def save_score(word, score):
         word (str): The word.
         score (int): The score.
     """
-    google_api.save_score(word, score)
+    google_db.save_score(word, score)
 
 
 def get_high_score_for(word):
@@ -40,7 +40,7 @@ def get_high_score_for(word):
     Returns:
         int: The high score if there is one, else zero.
     """
-    records = google_api.get_all_records()
+    records = google_db.get_all_records()
     high_score = 0
 
     for row in records:

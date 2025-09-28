@@ -3,8 +3,7 @@ This module is responsible for applying the rules of the Birds, Beasts and
 Fishes game, and maintaining the state of each game.
 """
 
-# random is imported to enable the selection of a random animal name
-from src.data import database
+from src.data import data_manager
 import random
 
 
@@ -30,7 +29,7 @@ class Game:
             Exception: If there is a problem accessing the animal names data.
         """
         self.__word_to_guess = random.choice(
-            database.get_animal_names()
+            data_manager.get_animal_names()
         ).upper()
         self.__masked_word = self.__initialise_masked_word()
         self.__previous_guesses = []

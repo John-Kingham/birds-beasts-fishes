@@ -3,11 +3,9 @@ This module manages the user's interaction with the game using a
 text-based interface in the console.
 """
 
-# art, Enum and time are external libraries imported to provide fonts, an
-# enumeration for menu item constants and a sleep/pause function, respectively
 import art
 from enum import Enum
-from src.data import database
+from src.data import data_manager
 from src.game import Game
 from src.tui import content
 import time
@@ -73,7 +71,7 @@ def _save_final_score(game):
     Args:
         game (Game): The game whose final score we want to save.
     """
-    database.save_score(game.masked_word, game.final_score())
+    data_manager.save_score(game.masked_word, game.final_score())
 
 
 def _show_game_over_message(game):

@@ -2,7 +2,7 @@
 This module is responsible for providing the text interface's content.
 """
 
-from src.data import database
+from src.data import data_manager
 
 
 def exit_message():
@@ -58,7 +58,7 @@ def game_over_message(game):
     num_letters = len(word)
     num_guesses = len(game.previous_guesses)
     score = game.final_score()
-    high_score = database.get_high_score_for(game.masked_word)
+    high_score = data_manager.get_high_score_for(game.masked_word)
     high_score_message = None
     if score > high_score:
         high_score_message = "That is better than your old high score of:"
