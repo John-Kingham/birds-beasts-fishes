@@ -21,7 +21,7 @@ def bordered_text(text, symbol):
     bottom = top
     left = (symbol * border_width) + (" " * padding)
     right = (" " * padding) + (symbol * border_width)
-    return f"{top}\n{left}{text}{right}\n{bottom}\n"
+    return f"{top}\n{left}{text}{right}\n{bottom}"
 
 
 def exit_message():
@@ -32,7 +32,7 @@ def exit_message():
         str: The game's exit message.
     """
     message = "Thank you for playing BIRDS, BEASTS AND FISHES!"
-    return "\n" + bordered_text(message, "!")
+    return f"\n{bordered_text(message, "!")}\n"
 
 
 def instructions():
@@ -54,7 +54,7 @@ def instructions():
         "- Your score will be saved for each animal name.\n"
         "- The score is calculated as:\n"
         "- Number of letters divided by number of guesses, times 100.\n\n"
-    ) + bordered_text("Press enter to return to the main menu", "!")
+    ) + bordered_text("Press enter to return to the main menu", "!") + "\n"
 
 
 def game_over_message(game):
@@ -80,7 +80,7 @@ def game_over_message(game):
     else:
         high_score_message = "That is worse than the current high score of:"
     return (
-        "Well done! "
+        "\nWell done! "
         f"You guessed that the word was: {" ".join(word)}\n"
         f"The number of letters in that word was: {num_letters}\n"
         f"The number of guesses you made was: {num_guesses}\n"
@@ -105,7 +105,7 @@ def guess_incorrect_message():
     Returns:
         str: The guess-was-incorrect message.
     """
-    return bordered_text("Your guess was WRONG!", "X")
+    return "\n" + bordered_text("Your guess was WRONG!", "X")
 
 
 def guess_invalid_message():
@@ -115,7 +115,7 @@ def guess_invalid_message():
     Returns:
         str: The guess-invalid message.
     """
-    return bordered_text(
+    return "\n" + bordered_text(
         "Your guess contained non-alphabetic characters. Try again", "!"
     )
 
@@ -127,7 +127,7 @@ def guessed_previously_message():
     Returns:
         str: The guessed-previously message.
     """
-    return bordered_text(
+    return "\n" + bordered_text(
         "Your guess matches an existing guess. Try again", "!"
     )
 
@@ -209,7 +209,7 @@ def main_menu_options(first, second, third):
         str: The main menu text.
     """
     return (
-        "Please choose from one of these options...\n"
+        "\nPlease choose from one of these options...\n"
         f"{first}. Play game\n"
         f"{second}. Read instructions\n"
         f"{third}. Exit\n\n"
