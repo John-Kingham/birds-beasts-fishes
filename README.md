@@ -14,6 +14,16 @@ As the title suggests, all words are the names of birds, beasts or fishes (or an
 
 ![Game shown on multiple screen sizes](docs/images/responsive-screenshot.png)
 
+## Table of Contents
+
+- [User Experience Design](#user-experience-design)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Data Model](#data-model)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+
 ## User Experience Design
 
 I designed the program using the "five planes" UX design process.
