@@ -59,15 +59,15 @@ All clear, no errors found.
 
 All clear, no errors found.
 
-#### src/data/database.py Validation
+#### src/data/data_manager.py Validation
 
 All clear, no errors found.
 
-#### src/data/github_api.py Validation
+#### src/data/github.py Validation
 
 All clear, no errors found.
 
-#### src/data/google_api.py Validation
+#### src/data/google_db.py Validation
 
 All clear, no errors found.
 

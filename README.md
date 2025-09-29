@@ -28,7 +28,7 @@ As the title suggests, all words are the names of birds, beasts or fishes (or an
 
 I designed the program using the "five planes" UX design process.
 
-### Strategic Plane
+### Strategy Plane
 
 #### Product Owner Goals
 
@@ -36,7 +36,7 @@ I designed the program using the "five planes" UX design process.
   - To inspire children of (almost) all ages to take an interest in the natural world, animals, language and puzzles
 - Secondary goals:
   - To improve the player’s spelling skills
-  - To give players a calming way to enjoy their spare time.
+  - To give players a calming way to enjoy their spare time
 
 #### User goals
 
@@ -70,13 +70,13 @@ The main structural elements of the user interface are:
 - Win Message
 - Exit Message
 
-The original design for the flow of control through these elements is shown in the flow chart below. There are minor differences between this flowchart and the final game, due to user feedback.
+The original design for the flow of control through these elements is shown in the flow chart below. There are minor differences between this flowchart and the final game, due to changes made based on user feedback.
 
 ![Flow of control chart](docs/images/flow-chart.png)
 
 ### Skeleton Plane
 
-The wireframe below show the conceptual design for each of the user interface's main structural elements. As this game is only available in the terminal, there are no wireframes specifically for tablets or mobile devices. There are minor differences between the wireframes and the final game, due to user feedback.
+The wireframe below show the conceptual design for the user interface's main structural elements. As this is a command-line game, there are no wireframes specifically for tablets or mobile devices. There are minor differences between these wireframes and the final game, due to changes made based on user feedback.
 
 ![Wireframes of the user interface](docs/images/wireframes.png)
 
@@ -125,7 +125,7 @@ The animal names are fetched from the Internet via GitHub:
 
 - When the game first loads, the user is shown the game's title and sub-title.
 - The title uses ASCII art to produce a very large font, which makes the "loading screen" more engaging for younger players.
-- This is useful to users because the title clearly tells them which game they've launched, and the sub-title tells them that they're about to play an animal-based word game.
+- This feature is useful to users because the title clearly tells them which game they've launched, and the sub-title tells them that they're about to play an animal-based word game.
 
 ![Game title](docs/images/game-title.png)
 
@@ -134,7 +134,7 @@ The animal names are fetched from the Internet via GitHub:
 - The main menu is shown at the start of each game (a "game" consists of one round, and ends when a word has been guessed).
 - It has a heading with a thick border to separate it from any preceding text, and so the user knows they're being asked something important (the border is made of question marks).
 - Under the heading, the user is presented with options to play the game, read the instructions, or exit the game.
-- This is useful to users because it gives them an opportunity to read the instructions before playing a new round, or exiting if they don't want to play.
+- This feature is useful to users because it gives them an opportunity to read the instructions before playing a new round, or to exit if they don't want to play.
 
 ![Main menu](docs/images/main-menu.png)
 
@@ -143,7 +143,7 @@ The animal names are fetched from the Internet via GitHub:
 - The game includes an instructions section, which is accessible from the main menu.
 - The instructions section explains how the game works and how the game's scoring system works.
 - The user can return to the main menu by pressing enter.
-- This is useful to users because it tells them how to play the game, and how to get a higher score (guess long words in as few guesses as possible).
+- This feature is useful to users because it tells them how to play the game, and how to get a higher score (guess long words in as few guesses as possible).
 
 ![Instructions](docs/images/instructions.png)
 
@@ -153,7 +153,7 @@ The animal names are fetched from the Internet via GitHub:
 - The game screen shows the user a random animal name to guess, with most of the letters hidden. The user is prompted to enter their guess.
 - When a guess is entered, the user will be shown one of several sections depending on whether their guess was invalid, matched an existing guess, or was correct. You can see screenshots for each of these in the testing section.
 - After a valid guess is entered, this section is shown again, but the correctly guessed letters will now be visible, along with a list of previous guesses.
-- This is useful to users because it enables them to: (a) see the word they have to guess, (b) enter guesses, and (c) get feedback on their guess. Without this feature, there is no game.
+- This feature is useful to users because it enables them to: (a) see the word they have to guess, (b) enter guesses, and (c) get feedback on their guess. Without this feature, there is no game.
 
 ![Game Screen](docs/images/game-screen.png)
 
@@ -163,15 +163,15 @@ The animal names are fetched from the Internet via GitHub:
 - It shows the user the full word, so they know which animal name they guessed, even if they guessed letter-by-letter.
 - It shows the user their score, and breaks down how that score was achieved (the number of letters in the word and the number of guesses). It also tells them how their score compares to their previous high score for that word.
 - Users can exit this round of the game and return to the main menu by pressing enter.
-- This section is useful to users because it rewards them with positive feedback on their efforts, and tells them if they beat their previous high score or not.
+- This feature is useful to users because it rewards them with positive feedback on their efforts, and tells them if they beat their previous high score or not.
 
 ![Win message](docs/images/win-message.png)
 
 #### Exit Message
 
-- This section is shown to users when the choose the Exit option from the main menu.
+- This section is shown when the user chooses Exit from the main menu.
 - A message is displayed thanking the user for playing. This may create a feeling of goodwill towards the game and increase the odds of them playing again.
-- This section is useful to users because it gives them clear feedback that they are leaving the game.
+- This feature is useful to users because it gives them clear feedback that they are leaving the game.
 
 ![Exit message](docs/images/exit-message.png)
 
@@ -184,16 +184,16 @@ The animal names are fetched from the Internet via GitHub:
 
 #### Multiple User High Scores
 
-- The user is able to enter a username so that the game can record different high scores for different users. This allows players to compete against one another on the same machine, which isn't currently possible.
-- This is a relatively simple feature that is a good candidate for the next development iteration.
+- The game asks users for a username so it can record different high scores for different users. This allows players to compete against other players on the same machine, which isn't currently possible.
+- This is a high priority feature that would be a good candidate for the next development iteration.
 
 ## Data Model
 
-The program uses a `Game` class to manage the state of the game, with instance variables for the word to guess, the masked word (showing which letters are hidden) and the player's previous guesses.
+The program uses a `Game` class to manage the state of the game. `Game` objects have instance variables for the word to guess, the masked word (showing which letters are hidden) and the player's previous guesses.
 
 `Game` has the following methods to enable the user interface to interact with and change the state of the game:
 
-- `.make_guess()` - makes a new guess and returns whether the guess was correct
+- `.make_guess()` - updates the game's status based on the user's guess and returns whether the guess was correct
 - `.is_over()` - returns whether the game is over
 - `.final_score()` - returns the game's final score
 
@@ -224,15 +224,19 @@ You can clone the repository using these steps:
 
 ### Forking
 
-By forking the GitHub Repository, you make a copy of the original repository on your GitHub account to view and/or make changes without affecting the original repository. You can fork this repository by using the following steps:
+By forking the GitHub repository, you make a copy of the original repository on your GitHub account to view and/or make changes without affecting the original repository. You can fork this repository by using the following steps:
 
 1. Log in to GitHub and locate the [GitHub repository](https://github.com/John-Kingham/birds-beasts-fishes).
 2. At the top of the repository, click the Fork button.
-3. You should now have a copy of the original repository in your own GitHub account.
+3. You should now have a copy of the repository in your own GitHub account.
 
 ### Google Sheet Setup
 
-The game uses a [Google Sheet](https://workspace.google.com/products/sheets/) to store high scores. To deploy the game locally or remotely, you will need to set up a Google Sheet using the steps below:
+The game uses a [Google Sheet](https://workspace.google.com/products/sheets/) to store high scores. For reference, here is a link to Google Sheet used as a database by this repository:
+
+- [This repository's Google Sheet database](https://docs.google.com/spreadsheets/d/1hZL9jjUbFB7-3hEEBt4RoH5AI0vfdozQlQmTRCHn0eE/edit?usp=drive_link)
+
+To deploy your own version of the game locally or remotely, you will need to set up a Google Sheet using the steps below:
 
 1. In your Google account, create a Google Sheet called "birds_beasts_fishes". It should have a sheet called "scores", with two columns called "word" and "score".
 2. Go to the [Google Cloud Platform](https://console.cloud.google.com/) and set up a new project.
@@ -244,28 +248,30 @@ These steps are missing some details that are beyond the scope of this document.
 
 ### Local Deployment
 
-To deploy the game locally, you will need to install required libraries and set up access to your Google Sheet.
+To deploy the game locally, you will need to install required libraries and set up access to your Google Sheet using the steps below:
 
 1. Clone the remote repository to your local machine.
 2. Start a Python virtual environment of your choice (to avoid loading required libraries into your global environment).
 3. Run `pip install -r requirements.txt` to install required libraries.
 4. If you haven't already, follow the steps in the Google Sheet Setup section above.
 5. Move/copy the Google Drive API credentials file into the local repository's root directory and rename it to creds.json.
-6. Call run.py. 
+6. Call run.py to launch the game.
 7. The game should run and have read/write access to your Google Sheet.
 
 ### Deployment to Heroku
 
-The game can also be deployed to Heroku by following the steps below.
+The game can also be deployed to Heroku by following the steps below:
 
-1. In your Heroku account, create a new app.
-2. Add two config variables:
+1. Fork this repository.
+2. Follow the Google Sheet setup steps above.
+3. In your Heroku account, create a new app.
+4. Add two config variables:
    - KEY=PORT, VALUE=8000
-   - KEY=CREDS, VALUE=the contents of the Google Drive API credentials file
-3. Add buildpacks for Python and Node.js in that order.
-4. Connect the Heroku app to your GitHub repository.
-5. Deploy the main branch in Heroku.
-6. Wait for the site to deploy and then visit the deployed site to check that it has deployed correctly.
+   - KEY=CREDS, VALUE=the contents of your Google Drive API credentials file
+5. Add buildpacks for Python and Node.js in that order.
+6. Connect the Heroku app to your GitHub repository.
+7. Deploy the main branch in Heroku.
+8. Wait for the site to deploy and then check that it has deployed correctly.
 
 These steps require knowledge of Heroku that is beyond the scope of this document. If you need additional information to set up your Heroku deployment, you should read the official Heroku documentation.
 
@@ -275,7 +281,7 @@ These steps require knowledge of Heroku that is beyond the scope of this documen
 
 ### Strategy Plane
 
-- I used the five planes method (Strategy, Scope, Structure, Skeleton, Surface), as detailed in [The Elements of User Experience](http://www.jjg.net/elements/).
+- I used the five planes method (Strategy, Scope, Structure, Skeleton, Surface), as detailed in [The Elements of User Experience](https://uk.bookshop.org/p/books/elements-of-user-experience-the-user-centered-design-for-the-web-and-beyond-jesse-james-garrett/e232e0c9869653bd?ean=9780321683687&next=t&next=t).
 
 #### Structure Plane
 
@@ -293,10 +299,10 @@ These steps require knowledge of Heroku that is beyond the scope of this documen
 ### Development
 
 - I wrote the project's code using [Visual Studio Code](https://code.visualstudio.com/).
-- I used [W3Schools](https://www.w3schools.com/), [Code Institute](https://codeinstitute.net/), [Codecademy](https://www.codecademy.com/) and [Microsoft Copilot](https://copilot.microsoft.com/) for general referencing.
-- I learned about Python Requests, property decorators, Enums and other more advanced Python features from Codecademy.
+- I used [Ecosia Search](https://www.ecosia.org/), [W3Schools](https://www.w3schools.com/), [Code Institute](https://codeinstitute.net/), [Codecademy](https://www.codecademy.com/) and [Microsoft Copilot](https://copilot.microsoft.com/) for general referencing.
+- I learned about Python Requests, property decorators, Enums and other Python features from Codecademy.
 - I learned about Python modules from my mentor.
-- Although I used various information sources to support the development of this project, no external code was copy/pasted into the project or copied verbatim. 
+- Although I used various information sources to support the development of this project, no external code was copy/pasted into the project (other than the Google Sheet connection code, which **was** copied directly from Code Institute's course material).
 
 ### Documentation
 
@@ -305,4 +311,4 @@ These steps require knowledge of Heroku that is beyond the scope of this documen
 
 ## People
 
-- Last but not least, I would like to thank my mentor, [Simen Daehlin](https://github.com/Eventyret).
+- I would like to thank my Code Institute mentor, [Simen Daehlin](https://github.com/Eventyret).
