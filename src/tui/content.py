@@ -5,6 +5,25 @@ This module is responsible for providing the text interface's content.
 from src.data import data_manager
 
 
+def bordered_text(text, symbol):
+    """Wraps a border around text using a repeating symbol.
+
+    Args:
+        text (str): The text to be wrapped.
+        symbol (str): A single character.
+
+    Returns:
+        str: The text wrapped in a border of symbols.
+    """
+    border_width = 3
+    padding = 1
+    top = symbol * (len(text) + border_width * 2 + padding * 2)
+    bottom = top
+    left = (symbol * border_width) + (" " * padding)
+    right = (" " * padding) + (symbol * border_width)
+    return f"{top}\n{left}{text}{right}\n{bottom}\n"
+
+
 def exit_message():
     """
     Returns an exit message to the user.
@@ -12,11 +31,8 @@ def exit_message():
     Returns:
         str: The game's exit message.
     """
-    return (
-        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Thank you for playing BIRDS, BEASTS AND FISHES! !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-    )
+    message = "Thank you for playing BIRDS, BEASTS AND FISHES!"
+    return "\n" + bordered_text(message, "!")
 
 
 def instructions():
@@ -37,11 +53,8 @@ def instructions():
         "\nSCORE:\n"
         "- Your score will be saved for each animal name.\n"
         "- The score is calculated as:\n"
-        "- The number of letters divided by the number of guesses, times 100."
-        "\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Press enter to return to the main menu !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-    )
+        "- Number of letters divided by number of guesses, times 100.\n\n"
+    ) + bordered_text("Press enter to return to the main menu", "!")
 
 
 def game_over_message(game):
@@ -67,16 +80,13 @@ def game_over_message(game):
     else:
         high_score_message = "That is worse than the current high score of:"
     return (
-        "\nWell done! "
+        "Well done! "
         f"You guessed that the word was: {" ".join(word)}\n"
         f"The number of letters in that word was: {num_letters}\n"
         f"The number of guesses you made was: {num_guesses}\n"
         f"This gives you a score for this word of: {score}\n"
-        f"{high_score_message} {high_score}\n"
-        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Press ENTER to return to the main menu! !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-    )
+        f"{high_score_message} {high_score}\n\n"
+    ) + bordered_text("Press ENTER to return to the main menu", "!")
 
 
 def guess_correct_message():
@@ -85,11 +95,7 @@ def guess_correct_message():
     Returns:
         str: The guess-was-correct message.
     """
-    return (
-        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Your guess was CORRECT! !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-    )
+    return "\n" + bordered_text("Your guess was CORRECT!", "!")
 
 
 def guess_incorrect_message():
@@ -99,11 +105,7 @@ def guess_incorrect_message():
     Returns:
         str: The guess-was-incorrect message.
     """
-    return (
-        "\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\n"
-        "XXX Your guess was WRONG! XXX\n"
-        "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-    )
+    return bordered_text("Your guess was WRONG!", "X")
 
 
 def guess_invalid_message():
@@ -113,10 +115,8 @@ def guess_invalid_message():
     Returns:
         str: The guess-invalid message.
     """
-    return (
-        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Your guess contained non-alphabetic characters. Try again !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    return bordered_text(
+        "Your guess contained non-alphabetic characters. Try again", "!"
     )
 
 
@@ -127,10 +127,8 @@ def guessed_previously_message():
     Returns:
         str: The guessed-previously message.
     """
-    return (
-        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Your guess matches an existing guess. Try again !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    return bordered_text(
+        "Your guess matches an existing guess. Try again", "!"
     )
 
 
@@ -181,19 +179,11 @@ def main_menu_heading():
     Returns:
         str: The main menu's heading.
     """
-    return (
-        "?????????????????????????????????????????\n"
-        "??? Are you ready to start a new game ???\n"
-        "?????????????????????????????????????????\n"
-    )
+    return bordered_text("Are you ready to start a new game", "?")
 
 
 def menu_option_invalid_message():
-    return (
-        "\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-        "!!! Your entry was invalid !!!\n"
-        "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n"
-    )
+    return bordered_text("Your entry was invalid", "!")
 
 
 def guess_prompt():
@@ -235,8 +225,4 @@ def database_error_message():
     Returns:
         str: The database error message.
     """
-    return (
-        "\n*****************************************\n"
-        "*** ERROR: UNABLE TO ACCESS DATABASE! ***\n"
-        "*****************************************\n"
-    )
+    return bordered_text("ERROR: UNABLE TO ACCESS DATABASE!", "*")
